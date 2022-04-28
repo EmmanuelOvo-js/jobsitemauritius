@@ -12,7 +12,7 @@ class CompanyController extends Controller
     // use the 'except' to grant other users access to a route
     public function __construct()
     {
-        $this->middleware('employer', ['except' => ['index']]);
+        $this->middleware(['employer', 'verified'], ['except' => ['index']]);
     }
 
     /**s

@@ -14,7 +14,7 @@ class JobController extends Controller
     // use the 'except' to grant other users access to a route
     public function __construct()
     {
-        $this->middleware('employer',['except'=>['index','show', 'apply', 'allJobs']]);
+        $this->middleware(['employer','verified'],['except'=>['index','show', 'apply', 'allJobs']]);
     }
 
     /**

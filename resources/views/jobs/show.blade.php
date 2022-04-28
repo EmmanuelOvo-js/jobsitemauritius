@@ -55,11 +55,15 @@
             {{-- checkApplication medthod was in job model and also a 'web route' for the form, and a function 'apply' in jobcontroller--}}
             @if (Auth::check()&&Auth::user()->user_type='seeker')
             @if(!$job->checkApplication())
-            <form action="{{route('apply',[$job->id])}}" method="POST">
+            <br>
+            <apply-component jobid={{$job->id}}></apply-component>
+
+            <!-- <form action="{{route('apply',[$job->id])}}" method="POST">
                 @csrf
                 &nbsp;
                     <button class="btn btn-success" style="width:100%">submit</button>    
-            </form>
+            </form> -->
+
             @endif
             @endif
 

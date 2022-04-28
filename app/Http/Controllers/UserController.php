@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    //Jordan added middleware fro employer
+    //Jordan added middleware for employer
     public function __construct()
     {
-        $this->middleware('seeker');
+        $this->middleware(['seeker', 'verified']);
     }
 
     /**

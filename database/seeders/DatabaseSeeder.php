@@ -19,9 +19,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->count(5)->create();
-        Company::factory()->count(5)->create();
-        Job::factory()->count(5)->create();
+        User::factory()->count(10)->create();
+        Company::factory()->count(10)->create();
+        Job::factory()->count(10)->create();
         
         $categorires = [
             'Technology',
