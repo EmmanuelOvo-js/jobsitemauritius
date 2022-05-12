@@ -56,7 +56,7 @@
             @if (Auth::check()&&Auth::user()->user_type='seeker')
             @if(!$job->checkApplication())
             <br>
-            <apply-component jobid={{$job->id}}></apply-component>
+            <apply-component :jobid={{$job->id}}></apply-component>
 
             <!-- <form action="{{route('apply',[$job->id])}}" method="POST">
                 @csrf
@@ -65,6 +65,11 @@
             </form> -->
 
             @endif
+            <br>
+            <favourite-component :jobid={{$job->id}} :favourited={{$job->checkSaved()?'true':'false'}}  ></favorite-component>
+            @else
+            Please login to apply this job
+
             @endif
 
         </div>

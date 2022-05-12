@@ -41,7 +41,7 @@ class Job extends Model
         return $this->belongsToMany(User::class)->withTimestamps();
     }
 
-    //Checking if logged in user exists in job_user table
+    //Checking if currently logged in ID exists in database, job_user table
     public function checkApplication()
     {
         return DB::table('job_user')->where('user_id',auth()->user()->id)->where
@@ -49,6 +49,15 @@ class Job extends Model
         
     }
 
+    //check vue_js
+    public function favorites(){
+        return $this->belongsToMany(Job::class,'favourites','job_id','user_id')->withTimeStamps();
+    }
+
+     //Checking if currently logged in ID exists in database, favourites table
+     public function checkSaved(){
+        return DB::table('favourites')->where('user_id',auth()->user()->id)->where('job_id',$this->id)->exists();
+    }
 
 
     use HasFactory;

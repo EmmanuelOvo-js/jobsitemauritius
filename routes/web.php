@@ -35,10 +35,20 @@ Route::post('/create', 'App\Http\Controllers\JobController@store')->name('job.st
 Route::get('/myjobs', 'App\Http\Controllers\JobController@myjobs')->name('my.jobs');
 Route::get('/{id}/edit', 'App\Http\Controllers\JobController@edit')->name('job.edit');
 Route::post('jobs/{id}/edit', 'App\Http\Controllers\JobController@update')->name('job.update');
+
 //employer cav view applicants
 Route::get('jobs/applications', 'App\Http\Controllers\JobController@applicant')->name('applicant');
+
 // jobs listing
 Route::get('jobs/alljobs', 'App\Http\Controllers\JobController@allJobs')->name('alljobs');
+
+//Apply form in jobs/show
+Route::post('/applications/{id}', 'App\Http\Controllers\JobController@apply')->name('apply');
+
+// Save and unsave job
+Route::post('/save/{id}', 'App\Http\Controllers\FavouriteController@saveJob');
+Route::post('/unsave/{id}', 'App\Http\Controllers\FavouriteController@unSaveJob');
+
 
 //Company Index route
 Route::resource('/company', 'App\Http\Controllers\CompanyController')->middleware('auth');// i added this route
@@ -48,8 +58,6 @@ Route::get('company/create', 'App\Http\Controllers\CompanyController@create')->n
 Route::post('company/create', 'App\Http\Controllers\CompanyController@store')->name('company.store');// To make the form in create page update
 Route::post('company/coverPhoto', 'App\Http\Controllers\CompanyController@coverPhoto')->name('cover.photo');// To make the form in create page update
 Route::post('company/logo', 'App\Http\Controllers\CompanyController@logo')->name('logo');// To make the form in create page update
-
-
 
 //User Profile
 Route::resource('/profile', 'App\Http\Controllers\UserController')->middleware('auth');
@@ -64,6 +72,3 @@ Route::post('/user/avatar', 'App\Http\Controllers\UserController@avatar')->name(
 //Employee view
 Route::view('employer/register','auth.passwords.employer-register')->name('employerRegister'); //this gets the file directly from the views no need to create a controller
 Route::post('employer/register', 'App\Http\Controllers\EmployerRegisterController@employerRegister')->name('emp.register'); //this gets employer registration form
-
-//Apply form in jobs/show
-Route::post('/applications/{id}', 'App\Http\Controllers\JobController@apply')->name('apply');
