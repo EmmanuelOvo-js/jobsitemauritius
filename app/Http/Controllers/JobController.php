@@ -173,4 +173,16 @@ class JobController extends Controller
         $jobId->users()->attach(Auth::user()->id);
         return redirect()->back()->with('message', 'Application sent');
     }
+
+    // Autocomplete search method for vue_js did not work
+    // public function searchJobs(Request $request){
+       
+    //     $keyword = $request->get('keyword');
+    //     $users = Job::where('title','like','%'.$keyword.'%')
+    //             ->orWhere('position','like','%'.$keyword.'%')
+    //             ->limit(5)->get();
+    //     return response()->json($users);
+
+    // }
+ 
 }

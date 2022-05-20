@@ -21,6 +21,7 @@
             $( "#datepicker" ).datepicker();
         } );
     </script>
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -110,6 +111,9 @@
                                     @else
                                         <a class="dropdown-item" href="/profile">
                                                 {{ __('Profile') }} </a>
+
+                                        <a class="dropdown-item" href="/home">
+                                                {{ __('Saved Jobs') }} </a>
                                      
                                     @endif
 

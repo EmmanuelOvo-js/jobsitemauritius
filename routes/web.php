@@ -3,6 +3,7 @@
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\CompanyController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,8 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//-------------------------------------------------------------------------
+
 //Job Index route
 Route::resource('/', 'App\Http\Controllers\JobController');
 // Route::get('/', 'App\Http\Controllers\JobController@index');
@@ -39,7 +42,7 @@ Route::post('jobs/{id}/edit', 'App\Http\Controllers\JobController@update')->name
 //employer cav view applicants
 Route::get('jobs/applications', 'App\Http\Controllers\JobController@applicant')->name('applicant');
 
-// jobs listing
+// jobs listing and search form
 Route::get('jobs/alljobs', 'App\Http\Controllers\JobController@allJobs')->name('alljobs');
 
 //Apply form in jobs/show
@@ -49,6 +52,7 @@ Route::post('/applications/{id}', 'App\Http\Controllers\JobController@apply')->n
 Route::post('/save/{id}', 'App\Http\Controllers\FavouriteController@saveJob');
 Route::post('/unsave/{id}', 'App\Http\Controllers\FavouriteController@unSaveJob');
 
+//-------------------------------------------------------------------------
 
 //Company Index route
 Route::resource('/company', 'App\Http\Controllers\CompanyController')->middleware('auth');// i added this route
@@ -58,6 +62,8 @@ Route::get('company/create', 'App\Http\Controllers\CompanyController@create')->n
 Route::post('company/create', 'App\Http\Controllers\CompanyController@store')->name('company.store');// To make the form in create page update
 Route::post('company/coverPhoto', 'App\Http\Controllers\CompanyController@coverPhoto')->name('cover.photo');// To make the form in create page update
 Route::post('company/logo', 'App\Http\Controllers\CompanyController@logo')->name('logo');// To make the form in create page update
+
+//-------------------------------------------------------------------------
 
 //User Profile
 Route::resource('/profile', 'App\Http\Controllers\UserController')->middleware('auth');
@@ -69,6 +75,8 @@ Route::post('/coverletter', 'App\Http\Controllers\UserController@coverletter')->
 Route::post('/resume', 'App\Http\Controllers\UserController@resume')->name('resume')->middleware('auth');
 Route::post('/user/avatar', 'App\Http\Controllers\UserController@avatar')->name('avatar'); 
 
+//-------------------------------------------------------------------------
+
 //Employee view
-Route::view('employer/register','auth.passwords.employer-register')->name('employerRegister'); //this gets the file directly from the views no need to create a controller
+Route::view('employer/register','auth.employer-register')->name('employerRegister'); //this gets the file directly from the views no need to create a controller
 Route::post('employer/register', 'App\Http\Controllers\EmployerRegisterController@employerRegister')->name('emp.register'); //this gets employer registration form
