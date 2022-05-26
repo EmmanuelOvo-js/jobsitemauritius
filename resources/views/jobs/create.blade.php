@@ -88,6 +88,60 @@
                                 </span>
                             @enderror
                         </div>
+
+                        <br>
+
+                        <div class="form-group">
+                            <label for="number_of_vacancy">No of Vacancy:</label>
+                            <input type="text" name="number_of_vacancy" class="form-control @error('number_of_vacancy') is-invalid @enderror"  
+                            value="{{ old('number_of_vacancy') }}">
+
+                            @if ($errors->has('number_of_vacancy'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('number_of_vacancy') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                        
+                        <br>
+
+                         <div class="form-group">
+                            <label for="experience">Years of Experience:</label>
+                            <input type="text" name="experience" class="form-control @error('experience') is-invalid @enderror"  
+                            value="{{ old('experience') }}">
+
+                            @if ($errors->has('experience'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('experience') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+
+                        <br>
+
+                        <div class="form-group">
+                            <label for="type">Gender:</label>
+                            <select class="form-control" name="gender">
+                                <option value="others">Others</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <br>
+
+                        <div class="form-group">
+                            <label for="type">Salary/year:</label>
+                            <select class="form-control" name="salary">
+                                <option value="negotiable">Negotiable</option>
+                                <option value="2000-5000">2000-5000</option>
+                                <option value="50000-10000">5000-10000</option>
+                                <option value="10000-20000">10,000-20,000</option>
+                                <option value="30000-500000">50,000-50,0000</option>
+                                <option value="500000-600000">50,0000-60,0000</option>
+                                <option value="600000 plus">60,0000 and Above</option>
+                            </select>
+                        </div>
+
                         <br>
                         <div class="form-group">
                             <label for="type">Type: </label>
@@ -98,6 +152,7 @@
                             </select>
                         </div>
                         <br>
+
                         <div class="form-group">
                             <label for="status">Status: </label>
                             <select name="status" id="" class="form-control">

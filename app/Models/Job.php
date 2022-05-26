@@ -22,6 +22,10 @@ class Job extends Model
         'type',
         'status',
         'last_date',
+        'number_of_vacancy',
+        'experience',
+        'gender',
+        'salary',
     ];
 
 

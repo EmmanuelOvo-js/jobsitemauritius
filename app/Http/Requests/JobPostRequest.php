@@ -31,6 +31,8 @@ class JobPostRequest extends FormRequest
             'address' => 'required',
             'position' => 'required',
             'last_date' => 'required',
+            'number_of_vacancy'=>'required|numeric',
+            'experience'=>'required|numeric'
 
         ];
     }

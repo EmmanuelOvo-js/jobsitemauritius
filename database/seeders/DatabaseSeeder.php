@@ -19,16 +19,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->count(10)->create();
-        Company::factory()->count(10)->create();
-        Job::factory()->count(10)->create();
+        User::factory()->count(12)->create();
+        Company::factory()->count(12)->create();
+        Job::factory()->count(12)->create();
         
         $categorires = [
             'Technology',
             'Engineering',
             'Medical',
             'Constructive',
-            'Software'
+            'Software',
+            'Accounting / Finance',
+            'Automative Jobs',
+            'Construction / Facilities',
+            'Telecommunications',
+            'Healthcare',
+            'Design, Art & Multimedia',
+            'Transportation & Logistics',
+            'Restaurant / Food Service',
         ];
         foreach($categorires as $category){
             Category::create(['name'=>$category]);

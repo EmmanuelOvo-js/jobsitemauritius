@@ -416,7 +416,7 @@ a {
           text-decoration: none; }
   .site-mobile-menu .site-mobile-menu-body {
     overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
     position: relative;
     padding: 20px;
     height: calc(100vh - 52px);
