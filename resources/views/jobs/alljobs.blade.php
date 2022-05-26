@@ -1,6 +1,10 @@
-@extends('layouts.app')
-
+@extends('layouts.main')
 @section('content')
+<br>
+<br>
+<br>
+<br>
+<br>
     <div class="container">
         <div class="row">
             {{-- Search Form --}}
@@ -39,7 +43,7 @@
             
 
 
-            <h1>Recent Jobs</h1>
+            {{-- <h1>Recent Jobs</h1> --}}
             <table class="table">
                 <thead>
                     <th></th>

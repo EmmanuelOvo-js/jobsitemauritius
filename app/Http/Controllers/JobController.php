@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Job;
 use App\Models\Company;
 use App\http\Requests\JobPostRequest;
+use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 
 class JobController extends Controller
@@ -29,8 +30,10 @@ class JobController extends Controller
         //show live jobs where stutus=live==1,draft==2.
         $jobs = Job::latest()->limit(10)->where('status',1)->get();
         // $companies = Company::latest()->limit(8)->get();
+        $categories = Category::with('jobs')->paginate(12);
+       
         $companies = Company::get()->random(6);
-        return view('welcome', compact('jobs', 'companies'));
+        return view('welcome', compact('jobs', 'companies','categories'));
     }
 
     /**

@@ -52,6 +52,9 @@ Route::post('/applications/{id}', 'App\Http\Controllers\JobController@apply')->n
 Route::post('/save/{id}', 'App\Http\Controllers\FavouriteController@saveJob');
 Route::post('/unsave/{id}', 'App\Http\Controllers\FavouriteController@unSaveJob');
 
+//category
+Route::get('/category/{id}','App\Http\Controllers\CategoryController@index')->name('category.index');
+
 //-------------------------------------------------------------------------
 
 //Company Index route

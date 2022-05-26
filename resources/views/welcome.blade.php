@@ -1,4 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Job Finder &mdash; Colorlib Website Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
 @include('partials.head')
+    
+  </head>
+  <body>
 
     @include('partials.nav')
   
@@ -26,7 +36,7 @@
                     <h3>{{$job->position}}</h3>
                     <div class="d-block d-lg-flex">
                       <div class="mr-3"><span class="icon-suitcase mr-1"></span> {{$job->company->cname}}</div>
-                      <div class="mr-3"><span class="icon-room mr-1"></span> {{str_limit($job->address,25)}}a</div>
+                      <div class="mr-3"><span class="icon-room mr-1"></span> {{str_limit($job->address,37)}}a</div>
                       <div><span class="icon-money mr-1"></span>{{$job->salary}}</div>
                     </div>
                   </div>
@@ -173,6 +183,11 @@
     
     @include('partials.blog')
     
-   @include('partials.footer')
-
+    @include('partials.footer')
+  <style>
+    .fas{
+      color: green;
+    }
+  </style>
+  </body>
 </html>

@@ -1,6 +1,11 @@
 @extends('layouts.main')
 @section('content')
-   
+
+{{-- Remove br tags and create a Hero BG for this show page, Also remove the site-navbar-wrap class in nav page --}}
+<br>
+<br> 
+<br>
+<br>
     <div class="container">
             @if(Session::has('message'))
                 <div class="alert alert-success">{{Session::get('message')}}</div>
@@ -20,7 +25,7 @@
                 </div>
             @endif
 
-            <div class="row" id="app">
+            <div class="row">
                 <div class="title" style="margin-top: 20px;">
                     <h2>{{$job->title}}</h2> 
                 </div>
@@ -45,12 +50,12 @@
 
                     <div class="p-4 mb-8 bg-white">
                         <h3 class="h5 text-black mb-3"><i class="fa fa-users" style="color: blue;">&nbsp;</i>Number of vacancy</h3>
-                        <p>{{$job->number_of_vacancy }} .</p>
+                        <p>{{$job->number_of_vacancy }}</p>
                     </div>
 
                     <div class="p-4 mb-8 bg-white">
                         <h3 class="h5 text-black mb-3"><i class="fa fa-clock-o" style="color: blue;">&nbsp;</i>Experience</h3>
-                        <p>{{$job->experience}}&nbsp;years</p>
+                        <p>{{$job->experience}}&nbsp;Years</p>
                     </div>
 
                     <div class="p-4 mb-8 bg-white">
@@ -76,10 +81,12 @@
                     <p>Last date to apply:{{ date('F d, Y', strtotime($job->last_date)) }}</p>
 
                     <p><a href="{{route('company.index',[$job->company->id,$job->company->slug])}}" 
-                        class="btn btn-warning" style="width: 100%;">Visit Company Pagesdfds</a></p>
+                        class="btn btn-warning" style="width: 100%;">Visit Company Page</a></p>
 
                     <p>
 
+                        {{-- Button disappears after logged in user submits form --}}
+                        {{-- checkApplication medthod was in job model and also a 'web route' for the form, and a function 'apply' in jobcontroller--}}
                         @if(Auth::check()&&Auth::user()->user_type=='seeker')
                 
                         @if(!$job->checkApplication() )
@@ -90,7 +97,7 @@
 
                         <br>
 
-                        <favorite-component :jobid={{$job->id}} :favorited={{$job->checkSaved()?'true':'false'}}  ></favorite-component>
+                        <favourite-component :jobid={{$job->id}} :favourited={{$job->checkSaved()?'true':'false'}}  ></favorite-component>
                         @else
                             Please login to apply this job
 
@@ -112,7 +119,7 @@
                 @endforeach --}}
 
 
-                <!-- Modal -->
+                {{-- <!-- Modal -->
                 <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -122,7 +129,7 @@
                                 <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>      
-                            {{-- <form action="{{route('mail')}}" method="POST">@csrf
+                            <form action="{{route('mail')}}" method="POST">@csrf
 
                                 <div class="modal-body">
                                     <input type="hidden" name="job_id" value="{{$job->id}}">
@@ -155,15 +162,14 @@
                                     <button type="submit" class="btn btn-primary">Mail this job</button>
                                 </div>
 
-                            </form> --}}
+                            </form>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
-        
             <br>
-            <br>
-            <br>
+            <br> 
+            
 
     </div>
    

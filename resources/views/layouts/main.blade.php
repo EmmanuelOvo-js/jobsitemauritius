@@ -9,11 +9,14 @@
     @include('../partials.head')
     
 </head>
-<body>
-    @include('../partials.nav')
-    @yield('content')
+<body >
+    <div id="app">
+        @include('../partials.nav')
+    
+        @yield('content')
 
-    @include('../partials.footer')
-   
+        @include('../partials.footer')
+        
+   </div>
 </body>
 </html>
