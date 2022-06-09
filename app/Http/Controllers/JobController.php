@@ -8,6 +8,7 @@ use App\Models\Company;
 use App\http\Requests\JobPostRequest;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class JobController extends Controller
 {
@@ -31,10 +32,19 @@ class JobController extends Controller
         $jobs = Job::latest()->limit(10)->where('status',1)->get();
         // $companies = Company::latest()->limit(8)->get();
         $categories = Category::with('jobs')->paginate(12);
-       
+
+        //for ajax pagination -- not working
+        // $data = DB::table('categories')->paginate(12); --no working
         $companies = Company::get()->random(6);
         return view('welcome', compact('jobs', 'companies','categories'));
     }
+
+    // public function fetch_data(Request $request){
+    //     if($request->ajax()){
+    //         // $data = DB::table('categories')->paginate(12); --no working
+    //         return view('welcome', compact('categories'))->render();
+    //     }
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -141,28 +151,46 @@ class JobController extends Controller
     }
 
     public function allJobs(Request $request){
+
+        
+         //front search
+         $position = $request->get('position');
+         $address = $request->get('address');
+         if($position&&$address){
+            $jobs = Job::where('position','LIKE','%'.$position.'%')
+                        ->where('address','LIKE','%'.$address.'%')
+                        ->paginate(10);
+ 
+             return view('jobs.alljobs',compact('jobs'));
+ 
+         }
+ 
+
         //added for search form in alljobs view
-        $keyword = $request->get('title');
+        $keyword = $request->get('position');
         // $keywords = request('title'); You can also do it this way.
         $type = $request->get('type');
         $category = $request->get('category_id');
         $address = $request->get('address');
         if ($keyword||$type||$category||$address){
-            $jobs = Job::where('title','LIKE','%'.$keyword.'%')
-                    ->orWhere('type', $type)
-                    ->orWhere('category_id', $category)
-                    ->orWhere('address', $address)
-                    ->paginate(10);
+            $jobs = Job::where('position','LIKE','%'.$keyword.'%')
+                        ->where('type','LIKE','%'.$type.'%')
+                        // ->where('category_id', $category)
+                        ->where('address','LIKE','%'.$address.'%')
+                        ->paginate(10);
+
                     return view('jobs.alljobs',compact('jobs'));                    
-        }else{ // show all latest post on the page. do not forget jordan
-            $jobs = Job::latest()->paginate(10);
+        }
+
+        else
+        { // show all latest post on the page. do not forget jordan
+            $jobs = Job::latest()->paginate(20);
             return view('jobs.alljobs',compact('jobs'));
         }
         //end search
+
     }
     
-
-
 
     /**
      * Remove the specified resource from storage.

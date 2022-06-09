@@ -1,10 +1,14 @@
 @extends('layouts.main')
 @section('content')
     <div class="album text-muted">
+        <br>
+            <br>
+            <br>
+            <br>
         <div class="container">
-            <div class="row">
+            <div class="row">            
                 <div class="title" style="margin-top: 20px;">
-                    <h2></h2> 
+                    <h2>{{$company->cname}}</h2> 
                 </div>
 
                 @if(empty($company->cover_photo))

@@ -55,6 +55,12 @@ Route::post('/unsave/{id}', 'App\Http\Controllers\FavouriteController@unSaveJob'
 //category
 Route::get('/category/{id}','App\Http\Controllers\CategoryController@index')->name('category.index');
 
+//For envelop icon in jobs/show.blade, to share specific job via email
+Route::post('/jobs/mail','App\Http\Controllers\EmailController@send')->name('mail');
+
+//category fetch_data ajax ---jordan
+// Route::get('welcome/fetch_data','App\Http\Controllers\CategoryController@fetch_data');
+
 //-------------------------------------------------------------------------
 
 //Company Index route
@@ -66,6 +72,7 @@ Route::post('company/create', 'App\Http\Controllers\CompanyController@store')->n
 Route::post('company/coverPhoto', 'App\Http\Controllers\CompanyController@coverPhoto')->name('cover.photo');// To make the form in create page update
 Route::post('company/logo', 'App\Http\Controllers\CompanyController@logo')->name('logo');// To make the form in create page update
 
+Route::get('/company','App\Http\Controllers\CompanyController@company')->name('company');
 //-------------------------------------------------------------------------
 
 //User Profile

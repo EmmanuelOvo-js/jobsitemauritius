@@ -37,8 +37,8 @@
                     <div class="p-4 mb-8 bg-white">
                         <!-- icon-book mr-3-->
                         <h3 class="h5 text-black mb-3"><i class="fa fa-book" style="color: blue;">&nbsp;
-                        </i>Description <a href="#"data-toggle="modal" data-target="#exampleModal1">
-                        <i class="fa fa-envelope-square" style="font-size: 34px;float:right;color:green;"></i></a></h3>
+                        </i>Description <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                        <i class="fa fa-envelope-square" style="font-size: 34px; float:right; color:green;"></i></a></h3>
                         <p> {{$job->description}}</p>
                     </div>
 
@@ -73,12 +73,12 @@
             
                 <div class="col-md-4 p-4 site-section bg-light">
                     <h3 class="h5 text-black mb-3 text-center">Short Info</h3>
-                    <p>Company name:{{$job->company->cname}}</p>
-                    <p>Address:{{$job->address}}</p>
-                    <p>Employment Type:{{$job->type}}</p>
-                    <p>Position:{{$job->position}}</p>
-                    <p>Posted:{{$job->created_at->diffForHumans()}}</p>
-                    <p>Last date to apply:{{ date('F d, Y', strtotime($job->last_date)) }}</p>
+                    <p>Company Name: {{$job->company->cname}}</p>
+                    <p>Address: {{$job->address}}</p>
+                    <p>Employment Type: {{$job->type}}</p>
+                    <p>Position: {{$job->position}}</p>
+                    <p>Posted: {{$job->created_at->diffForHumans()}}</p>
+                    <p>Last date to apply: {{ date('F d, Y', strtotime($job->last_date)) }}</p>
 
                     <p><a href="{{route('company.index',[$job->company->id,$job->company->slug])}}" 
                         class="btn btn-warning" style="width: 100%;">Visit Company Page</a></p>
@@ -118,54 +118,56 @@
                     </div>
                 @endforeach --}}
 
+                <!-- Modal -->
+     <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Send job to your friend</h5>
+                    <button type="button" class="icon-close2" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
 
-                {{-- <!-- Modal -->
-                <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Send job to your friend</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>      
-                            <form action="{{route('mail')}}" method="POST">@csrf
+                <form action="{{route('mail')}}" method="POST">@csrf
+                    <div class="modal-body">
+                        {{-- Hidden input to get job_id and job_slug --}}
+                        <input type="hidden" name="job_id" value="{{$job->id}}">
+                        <input type="hidden" name="job_slug" value="{{$job->slug}}">
+                        {{-- End hidden input --}}
 
-                                <div class="modal-body">
-                                    <input type="hidden" name="job_id" value="{{$job->id}}">
-                                    <input type="hidden" name="job_slug" value="{{$job->slug}}">
-
-                                    <div class="form-goup">
-                                        <label>Your name * </label>
-                                        <input type="text" name="your_name" class="form-control" required="">
-                                    </div>
-
-                                    <div class="form-goup">
-                                        <label>Your email *</label>
-                                        <input type="email" name="your_email" class="form-control" required="">
-                                    </div>
-
-                                    <div class="form-goup">
-                                        <label>Person name *</label>
-                                        <input type="text" name="friend_name" class="form-control" required="">
-                                    </div>
-
-                                    <div class="form-goup">
-                                        <label>Person email *</label>
-                                        <input type="email" name="friend_email" class="form-control" required="">
-                                    </div>
-                        
-                                </div>
-
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Mail this job</button>
-                                </div>
-
-                            </form>
+                        <div class="form-goup">
+                            <label>Your name * </label>
+                            <input type="text" name="your_name" class="form-control" required="">
                         </div>
+                        <br>
+                        <div class="form-goup">
+                            <label>Your email *</label>
+                            <input type="email" name="your_email" class="form-control" required="">
+                        </div>
+                        <br>
+                        <div class="form-goup">
+                            <label>Person name *</label>
+                            <input type="text" name="friend_name" class="form-control" required="">
+                        </div>
+                        <br>
+                        <div class="form-goup">
+                            <label>Person email *</label>
+                            <input type="email" name="friend_email" class="form-control" required="">
+                        </div>
+                
                     </div>
-                </div> --}}
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Mail this Job</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        
+      </div>
+
+
             </div>
             <br>
             <br> 

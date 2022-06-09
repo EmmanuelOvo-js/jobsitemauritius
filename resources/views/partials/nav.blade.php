@@ -25,14 +25,17 @@
                     <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
-                      <li><a href="{{ route('register') }}">For Job Seeker</a></li>
-                      <li>
-                        <a href="{{route('employerRegister')}}">For Employees</a>
-                      </li>
-                      <li><a href="contact.html">Contact</a></li>
-                      {{-- <li><a href="new-post.html"><span class="bg-primary text-white py-3 px-4 rounded">
-                        <span class="icon-plus mr-3"></span>Post New Job</span></a></li> --}}
-                     
+                      @if(!Auth::check())
+                        <li><a href="{{ route('register') }}">For Job Seeker</a></li>
+                        <li><a href="{{route('employerRegister')}}">For Employees</a></li>
+                      @else
+                        <li><a href="/home">Dashboard</a></li>
+                        @endif
+                        <li><a href="{{route('company')}}">All Companies</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        {{-- <li><a href="new-post.html"><span class="bg-primary text-white py-3 px-4 rounded">
+                          <span class="icon-plus mr-3"></span>Post New Job</span></a></li> --}}
+                      
                         @if (!Auth::check())
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary text-white py-3 px-4 rounded" data-bs-toggle="modal" 
@@ -68,7 +71,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="icon-close2 js-menu-toggle" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="icon-close2" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form method="POST" action="{{ route('login') }}">

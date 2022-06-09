@@ -12,7 +12,7 @@ class CompanyController extends Controller
     // use the 'except' to grant other users access to a route
     public function __construct()
     {
-        $this->middleware(['employer', 'verified'], ['except' => ['index']]);
+        $this->middleware(['employer', 'verified'], ['except' => ['index','company']]);
     }
 
     /**s
@@ -116,6 +116,12 @@ class CompanyController extends Controller
             return redirect()->back()->with('message', 'Logo Updated Successfully!');
         }
     }
+
+    // for listing all companies in company route
+    public function company(){
+        $companies = Company::latest()->paginate(12);
+        return view('company.company',compact('companies'));
+      }
 
     /**
      * Display the specified resource.
