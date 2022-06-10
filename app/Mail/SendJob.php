@@ -10,6 +10,7 @@ use Illuminate\Queue\SerializesModels;
 class SendJob extends Mailable
 {
     use Queueable, SerializesModels;
+    public $data;
 
     /**
      * Create a new message instance.
@@ -28,6 +29,7 @@ class SendJob extends Mailable
      */
     public function build()
     {
+        //if you want to create your own email template change 'markdown' to 'view' the create the email template in that view
         return $this->markdown('email.jobsEmail');
     }
 }

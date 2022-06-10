@@ -129,7 +129,7 @@
                 @if (!Auth::check())
                   <button type="submit" class="btn btn-primary">
                     {{ __('Login') }}
-                </button>
+                  </button>
                 @else
                   <a href="{{ route('logout') }}"
                   onclick="event.preventDefault();

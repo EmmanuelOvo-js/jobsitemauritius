@@ -11,12 +11,12 @@ class EmailController extends Controller
     public function send(Request $request){
 
 		//validate form
-        $this->validate($request,[
-    		'your_name'=>'required|string',
-    		'your_email'=>'required|email',
-    		'friend_name'=>'required|string',
-    		'friend_email'=>'required|email'
-    	]);
+        // $this->validate($request,[
+    	// 	'your_name'=>'required|string',
+    	// 	'your_email'=>'required|email',
+    	// 	'friend_name'=>'required|string',
+    	// 	'friend_email'=>'required|email'
+    	// ]);
 
 		//Creating url to send job link via email from the page
     	$homeUrl = url('/');

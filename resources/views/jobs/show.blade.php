@@ -7,6 +7,7 @@
 <br>
 <br>
     <div class="container">
+            {{-- Alert for sendJob email --}}
             @if(Session::has('message'))
                 <div class="alert alert-success">{{Session::get('message')}}</div>
             @endif
@@ -15,7 +16,7 @@
                 <div class="alert alert-danger">{{Session::get('err_message')}}</div>
             @endif
 
-            @if(isset($errors)&&count($errors)>0)
+            {{-- @if(isset($errors)&&count($errors)>0)
                 <div class="alert alert-danger">
                     <ul>
                     @foreach($errors->all() as $error)
@@ -23,7 +24,7 @@
                     @endforeach
                     </ul>
                 </div>
-            @endif
+            @endif --}}
 
             <div class="row">
                 <div class="title" style="margin-top: 20px;">
@@ -99,7 +100,7 @@
 
                         <favourite-component :jobid={{$job->id}} :favourited={{$job->checkSaved()?'true':'false'}}  ></favorite-component>
                         @else
-                            Please login to apply this job
+                            Please login as a Seeker to apply for this job
 
                         @endif
 
@@ -107,16 +108,19 @@
 
                 </div>
 
-                {{-- @foreach($jobRecommendations as $jobRecommendation)
+                @foreach($jobRecommendations as $jobRecommendation)
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <p class="badge badge-success">{{$jobRecommendation->type}}</p>
                             <h5 class="card-title">{{$jobRecommendation->position}}</h5>
-                            <p class="card-text">{{str_limit($jobRecommendation->description,90)}}
-                            <center> <a href="{{route('jobs.show',[$jobRecommendation->id,$jobRecommendation->slug])}}" class="btn btn-success">Apply</a></center>
+                            <p class="card-text">{{str_limit($jobRecommendation->description,90)}}</p>
+                               
+                            <a href="{{route('job.show',[$jobRecommendation->id,$jobRecommendation->slug])}}" 
+                                class="btn btn-success">Apply</a>
+
                         </div>
                     </div>
-                @endforeach --}}
+                @endforeach
 
                 <!-- Modal -->
      <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

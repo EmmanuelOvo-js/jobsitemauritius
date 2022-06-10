@@ -29,12 +29,19 @@ class JobController extends Controller
         // $jobs = Job::all()->take(20); //view only 10 from the database
         // $jobs = Job::orderBy('created_at', 'desc')->get()->take('10');
         //show live jobs where stutus=live==1,draft==2.
-        $jobs = Job::latest()->limit(10)->where('status',1)->get();
         // $companies = Company::latest()->limit(8)->get();
-        $categories = Category::with('jobs')->paginate(12);
-
         //for ajax pagination -- not working
         // $data = DB::table('categories')->paginate(12); --no working
+
+       // $jobs = Job::latest()->limit(10)->where('status',1)->get();
+        //To filter expired jobs
+        $jobs = Job::latest()
+                ->whereDate('last_date','>',date('Y-m-d'))
+                ->limit(10)->where('status',1)
+                ->get();
+
+        $categories = Category::with('jobs')->paginate(12);
+
         $companies = Company::get()->random(6);
         return view('welcome', compact('jobs', 'companies','categories'));
     }
@@ -104,7 +111,40 @@ class JobController extends Controller
     {
         $job = Job::find($id);
         //dd($job);
-        return view('jobs.show', compact('job'));
+        $jobRecommendations = $this->jobRecommendations($job);
+        return view('jobs.show', compact('job','jobRecommendations'));
+    }
+
+    public function jobRecommendations($job){
+        $data = [];
+        
+        $jobsBasedOnCategories = Job::latest()->where('category_id',$job->category_id)
+                             ->whereDate('last_date','>',date('Y-m-d'))
+                             ->where('id','!=',$job->id)
+                             ->where('status',1)
+                             ->limit(6)
+                             ->get();
+        array_push($data,$jobsBasedOnCategories);
+                           
+        $jobBasedOnCompany = Job::latest()
+                                ->where('company_id',$job->company_id)
+                                ->whereDate('last_date','>',date('Y-m-d'))
+                                ->where('id','!=',$job->id)
+                                ->where('status',1)
+                                ->limit(6)
+                                ->get();
+            array_push($data,$jobBasedOnCompany);
+
+        $jobBasedOnPosition= Job::where('position','LIKE','%'.$job->position.'%')                 
+                                ->where('id','!=',$job->id)
+                                ->where('status',1)
+                                ->limit(6);
+            array_push($data,$jobBasedOnPosition);
+
+       $collection  = collect($data); //colect all data
+       $unique = $collection->unique("id"); // filter duplicated data and show unique data based on id
+       $jobRecommendations =  $unique->values()->first();
+       return $jobRecommendations;
     }
 
     public function myjobs()

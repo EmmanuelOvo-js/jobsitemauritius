@@ -1,11 +1,12 @@
 @extends('layouts.main')
 @section('content')
-<br>
-<br>
-<br>
-<br>
-<br>
+
     <div class="container">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="row">
             {{-- Search Form --}}
             <div class="col-md-12">
@@ -43,8 +44,10 @@
 
                 </form>
             </div>
-            {{-- End Search Form --}}          
-
+            {{-- End Search Form --}}      
+            <br>
+            <br>
+            <br>
 
             {{-- <h1>Recent Jobs</h1> --}}
             {{-- <table class="table">
@@ -82,7 +85,9 @@
                 </tbody>
             </table> --}}
            <div class="col-md-12">
+           
                 <div class="rounded border jobs-wrap">
+                    
                     @if (count($jobs)>0)
                     @foreach ($jobs as $job)
                         <a href="{{route('job.show',[$job->id,$job->slug])}}" class="job-item d-block d-md-flex align-items-center  border-bottom fulltime">
