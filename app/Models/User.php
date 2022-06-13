@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Profile;
+use App\Models\Role;
 use App\Models\Company;
 
 class User extends Authenticatable implements MustVerifyEmail
@@ -58,4 +59,8 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->belongsToMany(Job::class,'favourites','user_id','job_id')->withTimeStamps();
     }
     
+    public function roles(){
+        return $this->belongsToMany(Role::class);
+    }
+
 }

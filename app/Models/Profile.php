@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Job;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class Profile extends Model
 {

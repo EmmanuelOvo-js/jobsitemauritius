@@ -29,7 +29,7 @@ class SendJob extends Mailable
      */
     public function build()
     {
-        //if you want to create your own email template change 'markdown' to 'view' the create the email template in that view
+        //if you want to create your own email template change 'markdown' to 'view' then create the email template in that view
         return $this->markdown('email.jobsEmail');
     }
 }

@@ -90,3 +90,6 @@ Route::post('/user/avatar', 'App\Http\Controllers\UserController@avatar')->name(
 //Employee view
 Route::view('employer/register','auth.employer-register')->name('employerRegister'); //this gets the file directly from the views no need to create a controller
 Route::post('employer/register', 'App\Http\Controllers\EmployerRegisterController@employerRegister')->name('emp.register'); //this gets employer registration form
+
+//Admin Dashboard
+Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->middleware('admin');
