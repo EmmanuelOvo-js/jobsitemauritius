@@ -2,10 +2,8 @@
 @section('content')
 
 {{-- Remove br tags and create a Hero BG for this show page, Also remove the site-navbar-wrap class in nav page --}}
-<br>
-<br> 
-<br>
-<br>
+
+<div class="site-section">
     <div class="container">
             {{-- Alert for sendJob email --}}
             @if(Session::has('message'))
@@ -27,7 +25,7 @@
             @endif --}}
 
             <div class="row">
-                <div class="title" style="margin-top: 20px;">
+                <div class="title">
                     <h2>{{$job->title}}</h2> 
                 </div>
 
@@ -178,5 +176,6 @@
             
 
     </div>
+</div>
    
 @endsection

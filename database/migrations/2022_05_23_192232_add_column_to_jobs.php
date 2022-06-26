@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::table('jobs', function (Blueprint $table) {
             $table->integer('number_of_vacancy');
             $table->integer('experience');
-            $table->string('gender');
+            // $table->string('gender');
             $table->string('salary');
         });
     }

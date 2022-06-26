@@ -93,7 +93,7 @@ class JobController extends Controller
             'status' => request('status'),
             'last_date' => request('last_date'),
             'number_of_vacancy'=>request('number_of_vacancy'),
-            'gender'=>request('gender'),
+            // 'gender'=>request('gender'),
             'experience'=>request('experience'),
             'salary'=>request('salary'),
 
@@ -238,10 +238,13 @@ class JobController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+    public function destroy(Request $request){
+
+        $id = $request->get('id');
+        $jobs = Job::find($id);
+        $jobs->delete();
+        return redirect()->back()->with('message','Job deleted successfully');
+ }
 
     public function apply(Request $request,$id){
         $jobId = Job::find($id);

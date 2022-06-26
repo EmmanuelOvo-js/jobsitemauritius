@@ -1,11 +1,23 @@
 /* Base */
+/* .footer-fix{
+  display: flex!important;
+  flex-direction: column!important;
+  min-height: 100vh!important;
+}
+
+.container{
+  flex-grow: 1!important;
+} */
+
 body {
   line-height: 1.7;
   color: rgba(0, 0, 0, 0.5);
   font-weight: 400;
   font-size: 1rem;
   font-family: "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; 
+  height: auto!important;
+}
 
 ::-moz-selection {
   background: #000;
@@ -102,9 +114,11 @@ a {
   .form-control:hover, .form-control:active, .form-control:focus {
     -webkit-box-shadow: none !important;
     box-shadow: none !important; }
-
+/* jordan changed margin-top to affect body */
 .site-section {
-  padding: 3em 0; }
+  padding: 3em 0;
+  margin-top: 2em;
+}
   @media (min-width: 768px) {
     .site-section {
       padding: 7em 0; } }
@@ -138,7 +152,8 @@ a {
 .site-footer {
   padding: 4em 0;
   background: #0d0d0d;
-  color: rgba(255, 255, 255, 0.5); }
+  color: rgba(255, 255, 255, 0.5);
+}
   .site-footer .footer-heading {
     font-size: 20px; }
   .site-footer a {
@@ -211,21 +226,28 @@ a {
     transform: translateY(-50%); }
 
 /* Navbar */
+/* jordan removed position and made margin negative to compasate body height and also
+add box shado
+*/
 .site-navbar-wrap {
-  background: #fff !important;
-  position: fixed;
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.066);
+  background: white !important;
+  /* position: fixed; */
   z-index: 99;
   width: 100%;
   padding: 20px 0;
-  margin-bottom: 113px;
+  margin-bottom: -113px;
   left: 0;
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease; }
+
   .site-navbar-wrap.scrolled {
+
     padding: 0px 0;
     -webkit-box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.1); }
+    box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.1); 
+  }
 
 .site-navbar-top {
   display: none;

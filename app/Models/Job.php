@@ -25,7 +25,7 @@ class Job extends Model
         'last_date',
         'number_of_vacancy',
         'experience',
-        'gender',
+        // 'gender',
         'salary',
     ];
 

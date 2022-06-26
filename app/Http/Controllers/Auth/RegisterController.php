@@ -82,6 +82,7 @@ class RegisterController extends Controller
             'dob' => request('dob'),
             
         ]);
+        $user->sendEmailVerificationNotification();
         return $user;
     }
 }

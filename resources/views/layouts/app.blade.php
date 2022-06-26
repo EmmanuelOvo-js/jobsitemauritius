@@ -96,25 +96,26 @@
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                    
                                     @if(Auth::user()->user_type==='employer')
-                                    <a class="dropdown-item" href="{{ route('company.view') }}">
-                                                {{ __('Company Profile') }} </a>
+                                        <a class="dropdown-item" href="{{ route('company.view') }}">
+                                                    {{ __('Company Profile') }} </a>
 
-                                    <a class="dropdown-item" href="{{route('job.create')}}">
-                                                {{ __('Post Job') }} </a>
+                                        <a class="dropdown-item" href="{{route('job.create')}}">
+                                                    {{ __('Post Job') }} </a>
 
-                                    <a class="dropdown-item" href="{{ route('my.jobs') }}">
-                                                {{ __('My jobs') }} </a>
+                                        <a class="dropdown-item" href="{{ route('my.jobs') }}">
+                                                    {{ __('My jobs') }} </a>
 
-                                    <a class="dropdown-item" href="{{ route('applicant') }}">
-                                                {{ __('Applicants') }} </a>
+                                        <a class="dropdown-item" href="{{ route('applicant') }}">
+                                                    {{ __('Applicants') }} </a>
 
-                                    @else
+                                    @elseif(Auth::user()->user_type==='seeker')
+
                                         <a class="dropdown-item" href="/profile">
                                                 {{ __('Profile') }} </a>
 
                                         <a class="dropdown-item" href="/home">
                                                 {{ __('Saved Jobs') }} </a>
-                                     
+                                        @else
                                     @endif
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"

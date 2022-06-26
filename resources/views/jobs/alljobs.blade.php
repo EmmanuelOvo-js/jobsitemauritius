@@ -1,12 +1,8 @@
 @extends('layouts.main')
 @section('content')
 
+<div class="site-section">
     <div class="container">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <div class="row">
             {{-- Search Form --}}
             <div class="col-md-12">
@@ -45,9 +41,6 @@
                 </form>
             </div>
             {{-- End Search Form --}}      
-            <br>
-            <br>
-            <br>
 
             {{-- <h1>Recent Jobs</h1> --}}
             {{-- <table class="table">
@@ -84,7 +77,7 @@
                      @endif
                 </tbody>
             </table> --}}
-           <div class="col-md-12">
+           <div class="col-md-12" style="padding-top:5%">
            
                 <div class="rounded border jobs-wrap">
                     
@@ -137,6 +130,7 @@
            <br>
            <br>
     </div>
+</div>
 
     
 @endsection

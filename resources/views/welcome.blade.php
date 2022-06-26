@@ -23,7 +23,7 @@
         <div class="row">
 
           <div class="col-md-12 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="100">
-            <h2 class="mb-5 h3">Recent Jobs</h2>
+            <h1 class="mb-5 h1">Recent Jobs</h1>
             <div class="rounded border jobs-wrap">
 
               @foreach ($jobs as $job)

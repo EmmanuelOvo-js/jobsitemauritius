@@ -35,13 +35,13 @@ class JobFactory extends Factory
             'address' => $this->faker->address(),
             'category_id' => rand(1, 5),
             'type' => 'fulltime',
-            'status' => rand(0,1),
+            'status' => rand(1,1),
             'description' => $this->faker->paragraph(rand(2, 10)),
             'roles' => $this->faker->text(),
             'last_date' => $this->faker->DateTime(),
             'number_of_vacancy'=>rand(1,10),
             'experience'=>rand(1,10),
-            'gender'=> $this->faker->randomElement(['male', 'female']),
+            // 'gender'=> $this->faker->randomElement(['male', 'female']),
             'salary'=>rand(10000,50000),
         ];
     }

@@ -9,7 +9,7 @@
       <div class="site-mobile-menu-body"></div>
     </div> <!-- .site-mobile-menu -->
     
-    
+    {{-- Add this class to make nav scroll: site-navbar-wrap --}}
     <div class="site-navbar-wrap js-site-navbar bg-white">
       
       <div class="container">

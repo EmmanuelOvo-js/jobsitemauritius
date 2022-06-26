@@ -1,10 +1,9 @@
 @extends('layouts.main')
 @section('content')
-        &nbsp;
-        &nbsp;
-        <div class="site-section bg-light">
+      
+        <div class="site-section">
             <div class="container">
-                <h3 class="display-4 text-center" style="padding: 30px">Job Seeker Registration</h3>
+                <h3 class="display-4 text-center">Job Seeker Registration</h3>
                 <div class="row">
                   
                     @if(Session::has('message'))

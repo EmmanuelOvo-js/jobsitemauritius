@@ -119,7 +119,7 @@
 
                         <br>
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="type">Gender:</label>
                             <select class="form-control" name="gender">
                                 <option value="others">Others</option>
@@ -127,7 +127,7 @@
                                 <option value="female">Female</option>
                             </select>
                         </div>
-                        <br>
+                        <br> --}}
 
                         <div class="form-group">
                             <label for="type">Salary/year:</label>
