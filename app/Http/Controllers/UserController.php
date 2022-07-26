@@ -47,7 +47,7 @@ class UserController extends Controller
             'experience' => 'required|min:25',
             'bio' => 'required|min:25',
             
-            
+             
         ]);
 
         $user_id = auth()->user()->id;
