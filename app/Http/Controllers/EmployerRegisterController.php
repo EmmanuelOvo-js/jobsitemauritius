@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Company;
 use Illuminate\Support\Facades\Hash;
-
+use Illuminate\Support\Str;
 
 class EmployerRegisterController extends Controller
 {
@@ -30,7 +30,7 @@ class EmployerRegisterController extends Controller
         Company::create([
             'user_id' => $user->id, //helps us to know which user a profile belongs to...
             'cname' => request('cname'),
-            'slug' => str_slug(request('cname')),
+            'slug' => Str::slug(request('cname')),
 
         ]);
         $user->sendEmailVerificationNotification();

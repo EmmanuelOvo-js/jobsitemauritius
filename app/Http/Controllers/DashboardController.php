@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Job;
+use Illuminate\Support\Str;
 
 class DashboardController extends Controller
 {
     public function index(){
-        $posts = Post::latest()->paginate(20);
+        $posts = Post::latest()->paginate(10);
     	return view('admin.index', compact('posts'));
     }
 
@@ -28,18 +29,13 @@ class DashboardController extends Controller
    			$path = $file->store('uploads','public');
    			Post::create([
    				'title'=>$title=$request->get('title'),
-   				'slug'=>str_slug($title),
+   				'slug'=>Str::slug($title),
    				'content'=>$request->get('content'),
    				'image'=>$path,
    				'status'=>$request->get('status')
    			]);
    		}
    		return redirect('/dashboard')->with('message','Post created successfully');
-    }
-
-   	public function edit($id){
-   		$post = Post::find($id);
-   		return view('admin.edit',compact('post'));
     }
     
     public function update($id,Request $request){
@@ -52,7 +48,7 @@ class DashboardController extends Controller
    			$file = $request->file('image');
    			$path = $file->store('uploads','public');
    			Post::where('id',$id)->update([
-   				'title'=>$title=$request->get('title'),
+   				'title'=>$request->get('title'),
    				'content'=>$request->get('content'),
    				'image'=>$path,
    				'status'=>$request->get('status')
@@ -72,6 +68,11 @@ class DashboardController extends Controller
                 ]);
         }
 
+		public function edit($id){
+			$post = Post::find($id);
+			return view('admin.edit',compact('post'));
+	 }
+
 	public function destroy(Request $request){
 
    		$id = $request->get('id');
@@ -80,15 +81,16 @@ class DashboardController extends Controller
    		return redirect()->back()->with('message','Post deleted successfully');
     }
 
-//     public function trash(){
-//     	$posts = Post::onlyTrashed()->paginate(20);
-//     	return view('admin.trash',compact('posts'));
-//     }
-//     public function restore($id){
-//     	Post::onlyTrashed()->where('id',$id)->restore();
-//         return redirect()->back()->with('message','Post restored successfully');
+    public function trash(){
+    	$posts = Post::onlyTrashed()->paginate(20); //onlyTrashed laravel method
+    	return view('admin.trash',compact('posts'));
+    }
+    public function restore($id){
+    	Post::onlyTrashed()->where('id',$id)->restore();
+        return redirect()->back()->with('message','Post restored successfully');
 
-//     }
+    }
+ 
 
 //     public function toggle($id){
 //     	$post = Post::find($id);

@@ -2,6 +2,10 @@
 <link rel="stylesheet" href="{{asset('external/fonts/icomoon/style.css')}}">
 
 <link rel="stylesheet" href="{{asset('external/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{asset('external/css/bootstrap.min.css.map')}}">
+<link rel="stylesheet" href="{{asset('external/css/bootstrap-reboot.min.css')}}">
+<link rel="stylesheet" href="{{asset('external/css/bootstrap-grid.min.css')}}">
+
 <link rel="stylesheet" href="{{asset('external/css/magnific-popup.css')}}">
 <link rel="stylesheet" href="{{asset('external/css/jquery-ui.css')}}">
 <link rel="stylesheet" href="{{asset('external/css/owl.carousel.min.css')}}">

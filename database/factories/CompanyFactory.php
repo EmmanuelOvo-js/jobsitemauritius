@@ -5,6 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Company;
 use App\Models\User;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Company>
@@ -29,7 +30,7 @@ class CompanyFactory extends Factory
         return [
             'user_id' => User::all()->random()->id,
             'cname' => $name = $this->faker->company(),
-            'slug' => str_slug($name),
+            'slug' => Str::slug($name),
             'address' => $this->faker->address(),
             'phone' => $this->faker->phoneNumber(),
             'website' => $this->faker->domainName(),

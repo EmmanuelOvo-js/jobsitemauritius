@@ -101,10 +101,13 @@ Route::post('/dashboard/destroy','App\Http\Controllers\DashboardController@destr
 Route::get('/dashboard/{id}/edit','App\Http\Controllers\DashboardController@edit')->name('post.edit')->middleware('admin');
 Route::post('/dashboard/{id}/update','App\Http\Controllers\DashboardController@update')->name('post.update')->middleware('admin');
 
+//Trash post
 Route::get('/dashboard/trash','App\Http\Controllers\DashboardController@trash')->middleware('admin');
-
 Route::get('/dashboard/{id}/trash','App\Http\Controllers\DashboardController@restore')->name('post.restore')->middleware('admin');
+//Route::post('/dashboard/deletetrash','App\Http\Controllers\DashboardController@PermanentlyDelete')->name('post.Permanentlydelete')->middleware('admin');
 
+
+//toggle for draft and live
 Route::get('/dashboard/{id}/toggle','App\Http\Controllers\DashboardController@toggle')->name('post.toggle')->middleware('admin');
 Route::get('/posts/{id}/{slug}','App\Http\Controllers\DashboardController@show')->name('post.show');
 

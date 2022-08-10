@@ -9,6 +9,7 @@ use App\http\Requests\JobPostRequest;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class JobController extends Controller
 {
@@ -83,7 +84,7 @@ class JobController extends Controller
             'user_id' => $user_id,
             'company_id' => $company_id,
             'title' => request('title'),
-            'slug' => str_slug(request('title')),
+            'slug' => Str::slug(request('title')),
             'description' => request('description'),
             'roles' => request('roles'),
             'category_id' => request('category'),

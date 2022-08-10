@@ -1,16 +1,17 @@
-@extends('layouts.app')
+@extends('layouts.main')
 @section('content')
 
+<div class="site-section">
     <div class="container">
         @if(Session::has('message'))
             <div class="alert alert-success">{{Session::get('message')}}</div>
         @endif
 
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 @include('admin.left-menu')
             </div>
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <div class="card">
                     <div class="card-body">
                         <table class="table table-striped">
@@ -28,12 +29,12 @@
                             <tbody>
                                 @foreach($posts as $post)
                                     <tr>
-                                        <td><img src="{{asset('storage/'.$post->image)}}" width="80"></td>
-                                        <td><a href="{{route('post.show',[$post->id,$post->slug])}}" target="_blank" >{{$post->title}}</a></td>
-                                        <td>{{str_limit($post->content,20)}}</td>
+                                        <td><img src="{{asset('storage/'.$post->image)}}" width="50"></td>
+                                        <td><a href="{{route('post.show',[$post->id,$post->slug])}}" target="_blank" >{{str_limit($post->title,5)}}</a></td>
+                                        <td>{{str_limit($post->content,15)}}</td>
                                         <td>
                                             @if($post->status=='0')
-                                            <a href="{{route('post.toggle',[$post->id])}}" class="badge badge-primary"> Draft</a>
+                                            <a href="{{route('post.toggle',[$post->id])}}"> <span class="badge badge-primary">Draft</span></a>
                                                 @else
                                             <a href="{{route('post.toggle',[$post->id])}}" class="badge badge-success"> Live</a>
                                             @endif
@@ -89,6 +90,7 @@
             </div>
         </div>
     </div>
+</div>
 
 
 @endsection
