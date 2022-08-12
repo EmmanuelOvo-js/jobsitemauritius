@@ -92,28 +92,28 @@ class DashboardController extends Controller
     }
  
 
-//     public function toggle($id){
-//     	$post = Post::find($id);
-//     	$post->status = !$post->status;
-//     	$post->save();
-//     	return redirect()->back()->with('message','Status updated successfully');
+    public function toggle($id){
+    	$post = Post::find($id);
+    	$post->status = !$post->status;
+    	$post->save();
+    	return redirect()->back()->with('message','Status updated successfully');
 
-//     }
+    }
     
-//     public function show($id){
-//       $post = Post::find($id);
-//       return view('admin.read',compact('post'));
-//     }
+    public function show($id){
+      $post = Post::find($id);
+      return view('admin.read',compact('post'));
+    }
 
-//     public function getAllJobs(){
-//         $jobs = Job::latest()->paginate(50);
-//         return view('admin.job',compact('jobs'));
-//     }
+    public function getAllJobs(){
+        $jobs = Job::latest()->paginate(30);
+        return view('admin.job',compact('jobs'));
+    }
 
-//     public function changeJobStatus($id){
-//         $job = Job::find($id);
-//         $job->status = !$job->status;
-//         $job->save();
-//         return redirect()->back()->with('message','Status updated successfully');
-//     }
+    public function changeJobStatus($id){
+        $job = Job::find($id);
+        $job->status = !$job->status;
+        $job->save();
+        return redirect()->back()->with('message','Status updated successfully');
+    }
 	}	

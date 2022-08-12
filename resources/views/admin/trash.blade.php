@@ -100,7 +100,7 @@
             </div>
         </div>
 </div>
+<br>
+<br>
+<br>
 @endsection
-<br>
-<br>
-<br>

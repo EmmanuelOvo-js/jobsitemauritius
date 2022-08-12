@@ -107,17 +107,19 @@ Route::get('/dashboard/{id}/trash','App\Http\Controllers\DashboardController@res
 //Route::post('/dashboard/deletetrash','App\Http\Controllers\DashboardController@PermanentlyDelete')->name('post.Permanentlydelete')->middleware('admin');
 
 
-//toggle for draft and live
+//toggle for draft and live for admin
 Route::get('/dashboard/{id}/toggle','App\Http\Controllers\DashboardController@toggle')->name('post.toggle')->middleware('admin');
+
+//blog show page
 Route::get('/posts/{id}/{slug}','App\Http\Controllers\DashboardController@show')->name('post.show');
 
+//jOb listing for admin
 Route::get('/dashboard/jobs','App\Http\Controllers\DashboardController@getAllJobs')->middleware('admin');
-Route::get('/dashboard/{id}/jobs','DashboardController@changeJobStatus')->name('job.status')->middleware('admin');
+Route::get('/dashboard/{id}/jobs','App\Http\Controllers\DashboardController@changeJobStatus')->name('job.status')->middleware('admin');
 
 
 //testimonial
 Route::get('testimonial','App\Http\Controllers\TestimonialController@index')->middleware('admin');
-
 Route::get('testimonial/create','App\Http\Controllers\TestimonialController@create')->middleware('admin');
 Route::post('testimonial/create','App\Http\Controllers\TestimonialController@store')->name('testimonial.store')->middleware('admin');
 

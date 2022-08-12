@@ -10,6 +10,8 @@ use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use App\Models\Post;
+use App\Models\Testimonial;
 
 class JobController extends Controller
 {
@@ -17,7 +19,7 @@ class JobController extends Controller
     // use the 'except' to grant other users access to a route
     public function __construct()
     {
-        $this->middleware(['employer','verified'],['except'=>['index','show', 'apply', 'allJobs']]);
+        $this->middleware(['employer','verified'],['except'=>['index','show', 'apply', 'allJobs','searchJobs','category']]);
     }
 
     /**
@@ -42,9 +44,10 @@ class JobController extends Controller
                 ->get();
 
         $categories = Category::with('jobs')->paginate(12);
-
+        $posts = Post::where('status',1)->get(); //getting the posts that the status is 1. 1==live, 2==draft.
+        $testimonial = Testimonial::orderBy('id','DESC')->first(); //Show 1 testimonail on main homepage
         $companies = Company::get()->random(6);
-        return view('welcome', compact('jobs', 'companies','categories'));
+        return view('welcome', compact('jobs', 'companies','categories','posts','testimonial'));
     }
 
     // public function fetch_data(Request $request){
