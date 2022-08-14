@@ -1,6 +1,7 @@
-@extends('layouts.app')
-
+@extends('layouts.main')
 @section('content')
+
+<div class="site-section">
 <div class="container">
 
     @if(Session::has('message'))
@@ -84,5 +85,6 @@
                     </table>
             </div>
     </div>
+</div>
 </div>
 @endsection

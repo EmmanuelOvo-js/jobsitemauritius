@@ -13,7 +13,6 @@
 
           <div class="col-md-12 col-lg-8 mb-5">
             
-          
             <form method="POST" action="" class="p-5 bg-white">
                         @csrf
 

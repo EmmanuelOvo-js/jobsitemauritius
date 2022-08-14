@@ -91,7 +91,7 @@
                         @if(!$job->checkApplication() )
                             <apply-component :jobid={{$job->id}}></apply-component>
                         @else
-                        <center><span style="color: #000;">You applied this job</span></center>
+                        <center><span style="color:white; background:green; padding:5%; border-radius:5px;">You applied this job</span></center>
                         @endif
 
                         <br>
@@ -159,7 +159,7 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
                         <button type="submit" class="btn btn-primary">Mail this Job</button>
                     </div>
 

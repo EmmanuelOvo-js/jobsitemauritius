@@ -1,6 +1,9 @@
-@extends('layouts.app')
-
+@extends('layouts.main')
 @section('content')
+
+{{-- This is the seeker homwpage. Saved jobs displays here --}}
+
+<div class="site-section">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
@@ -24,5 +27,6 @@
             @endif 
         </div>
     </div>
+</div>
 </div>
 @endsection

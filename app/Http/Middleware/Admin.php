@@ -22,10 +22,8 @@ class Admin
     
         $adminRole = Auth::user()->roles->pluck('name');
         if($adminRole->contains('admin')){
-
         return $next($request);
-      }
-      
-        
+        }
     }
+
 }

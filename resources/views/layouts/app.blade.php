@@ -76,7 +76,7 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Job Seeker Register') }}</a>
                                 </li>
                             @endif
-                        @else
+                            @else
                             
 
                             <li class="nav-item dropdown">

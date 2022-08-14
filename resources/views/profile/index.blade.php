@@ -1,6 +1,7 @@
-@extends('layouts.app')
-
+@extends('layouts.main')
 @section('content')
+
+<div class="site-section">
 <div class="container">
     <div class="row">
         {{-- Profile Avatar --}}
@@ -174,5 +175,6 @@
         </div>
         {{-- End side bar --}}
     </div>
+</div>
 </div>
 @endsection

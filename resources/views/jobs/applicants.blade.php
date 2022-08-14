@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('content')
+
 <div class="site-section">
     <div class="container">
         <div class="row justify-content-center">
