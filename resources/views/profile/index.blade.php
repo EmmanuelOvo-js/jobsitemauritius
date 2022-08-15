@@ -8,9 +8,9 @@
         <div class="col-md-3">
             {{-- If user has not uploaded a profile img display default avatar else display uploaded image --}}
             @if (empty(Auth::user()->profile->avatar))
-                <img src="{{asset('avatar/serwman1.jpg')}}" alt="" width="100" style="width: 100%;">
+                <img src="{{asset('avatar/serwman1.jpg')}}" class="rounded" alt="" width="100" style="width: 100%;">
             @else
-                 <img src="{{asset('uploads/avatar')}}/{{Auth::user()->profile->avatar}}" alt="" width="100" style="width: 100%;">
+                <img src="{{asset('uploads/avatar')}}/{{Auth::user()->profile->avatar}}" class="rounded" alt="" width="100" style="width: 100%;">
             @endif
            
             <form method="POST" action="{{route('avatar')}}" enctype="multipart/form-data">

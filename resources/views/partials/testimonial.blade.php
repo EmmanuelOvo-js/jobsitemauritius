@@ -1,4 +1,4 @@
-<div class="site-section" data-aos="fade">
+<div class="site-section-jordan-section" data-aos="fade">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-md-6 mb-5 mb-md-0">

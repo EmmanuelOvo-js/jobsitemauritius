@@ -34,11 +34,11 @@
 
                       <li>
                           <div class="dropdown">
-                            <a class="btn btn-success dropdown-toggle" type="button" 
+                            <a class="btn btn-success dropdown-toggle" id="navbtn" type="button" 
                             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">Become a Member</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a class="dropdown-item" href="{{ route('register') }}">Job Seeker</a>
-                              <a class="dropdown-item" href="{{route('employerRegister')}}">Employees</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                              <a class="dropdown-item" id="dropD" href="{{ route('register') }}">Job Seeker</a>
+                              <a class="dropdown-item" id="dropD" href="{{route('employerRegister')}}">Employees</a>
                             </div>
                         </div>
                       </li>
@@ -59,36 +59,36 @@
                               
                           </a>
 
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" >
                              
                               @if(Auth::user()->user_type==='employer')
-                                  <a class="dropdown-item" href="{{ route('company.view') }}">
+                                  <a class="dropdown-item" id="dropD" href="{{ route('company.view') }}">
                                               {{ __('Company Profile') }} </a>
 
-                                  <a class="dropdown-item" href="{{route('job.create')}}">
+                                  <a class="dropdown-item" id="dropD" href="{{route('job.create')}}">
                                               {{ __('Post Job') }} </a>
 
-                                  <a class="dropdown-item" href="{{ route('my.jobs') }}">
+                                  <a class="dropdown-item" id="dropD" href="{{ route('my.jobs') }}">
                                               {{ __('My jobs') }} </a>
 
-                                  <a class="dropdown-item" href="{{ route('applicant') }}">
+                                  <a class="dropdown-item" id="dropD" href="{{ route('applicant') }}">
                                               {{ __('Applicants') }} </a>
 
                               @elseif(Auth::user()->user_type==='seeker')
 
-                                  <a class="dropdown-item" href="/profile">
+                                  <a class="dropdown-item" id="dropD" href="/profile">
                                           {{ __('Profile') }} </a>
 
-                                  <a class="dropdown-item" href="/home">
+                                  <a class="dropdown-item" id="dropD" href="/home">
                                           {{ __('Saved Jobs') }} </a>
                                   
                               @elseif(Auth::user()->user_type==='admin')
-                                  <a class="dropdown-item" href="/home">Dashboard</a>
-                                  <a class="dropdown-item" href="/dashboard/create">Create post</a>
-                                  <a class="dropdown-item" href="/dashboard/trash">Trash</a>
-                                  <a class="dropdown-item" href="/testimonial">View Testimonial</a>
-                                  <a class="dropdown-item" href="/testimonial/create">Create Testimonial</a>
-                                  <a class="dropdown-item" href="/dashboard/jobs">View Jobs</a>
+                                  <a class="dropdown-item" id="dropD" href="/home">Dashboard</a>
+                                  <a class="dropdown-item" id="dropD" href="/dashboard/create">Create post</a>
+                                  <a class="dropdown-item" id="dropD" href="/dashboard/trash">Trash</a>
+                                  <a class="dropdown-item" id="dropD" href="/testimonial">View Testimonial</a>
+                                  <a class="dropdown-item" id="dropD" href="/testimonial/create">Create Testimonial</a>
+                                  <a class="dropdown-item" id="dropD" href="/dashboard/jobs">View Jobs</a>
                                   @else
                               @endif
                           </div>
@@ -103,7 +103,7 @@
                           {{-- Add this: py-3 px-4 to increase button size --}}
                           {{-- Show Gain Access if user is not logged in --}}
                           <!-- Button trigger modal -->
-                          <button type="button" class="btn btn-primary text-white rounded" data-bs-toggle="modal"  
+                          <button type="button" class="btn btn-primary text-white rounded" id="loginbtn" data-bs-toggle="modal"  
                           data-bs-target="#exampleModal">
                             Login
                           </button>
@@ -196,7 +196,7 @@
               
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 @if (!Auth::check())
-                  <button type="submit" class="btn btn-primary">{{ __('Login') }}</button>
+                  <button type="submit" class="btn btn-primary" id="loginbtn">{{ __('Login') }}</button>
                 @else
                 
                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); 

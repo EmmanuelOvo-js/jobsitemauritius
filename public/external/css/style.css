@@ -9,6 +9,50 @@
   flex-grow: 1!important;
 } */
 
+/* Jordan CSS added */
+
+:root {
+  --Cinnabar: #EC3D34;
+  --Tarawera: #0C3C5C;
+  --Flamingo: #F45F2D;
+  --Gray_Asparagus: #485444;
+}
+
+#navbtn{
+  color: white!important;
+  background: var(--Cinnabar);
+  border: var(--Cinnabar);
+}
+
+#navbtn:hover{
+  color: white!important;
+  background: var(--Tarawera);
+  border: var(--Tarawera);
+}
+
+/* nav dropdown hover */
+#dropD:hover{
+  background: var(--Cinnabar);
+  color:white;
+}
+
+/* login btn */
+#loginbtn{
+  color: white!important;
+  background: var(--Tarawera);
+  border: var(--Tarawera);
+}
+
+#loginbtn:hover{
+  color: white!important;
+  background: var(--Cinnabar);
+  border: var(--Cinnabar);
+}
+
+
+
+/* End of Jordan CSS*/
+
 body {
   line-height: 1.7;
   color: rgba(0, 0, 0, 0.5);
@@ -16,7 +60,6 @@ body {
   font-size: 1rem;
   font-family: "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; 
-  height: auto!important;
 }
 
 ::-moz-selection {
@@ -116,12 +159,16 @@ a {
     box-shadow: none !important; }
 /* jordan changed margin-top to affect body */
 .site-section {
-  padding: 3em 0;
-  margin-top: 2em;
+  padding: 4em 0;
+}
+
+.site-section-jordan-section {
+  padding: 5em 0;
+  /* margin-top: 2em; */
 }
   @media (min-width: 768px) {
     .site-section {
-      padding: 7em 0; } }
+      padding: 5em 0; } }
   .site-section.site-section-sm {
     padding: 4em 0; }
 
@@ -226,9 +273,6 @@ a {
     transform: translateY(-50%); }
 
 /* Navbar */
-/* jordan removed position and made margin negative to compasate body height and also
-add box shado
-*/
 .site-navbar-wrap {
   box-shadow: 10px 0 30px rgba(0, 0, 0, 0.066);
   background: white !important;
@@ -236,7 +280,7 @@ add box shado
   z-index: 99;
   width: 100%;
   padding: 20px 0;
-  margin-bottom: -113px;
+  margin-bottom: 0px;
   left: 0;
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
@@ -280,6 +324,7 @@ add box shado
       text-decoration: none !important;
       font-size: 15px;
       display: inline-block; }
+      /* jordan modified */
     .site-navbar .site-navigation .site-menu > li {
       display: inline-block;
       padding: 10px 5px; }
@@ -287,11 +332,11 @@ add box shado
         padding: 10px 10px;
         text-transform: uppercase;
         letter-spacing: .05em;
-        color: rgba(0, 0, 0, 0.6);
+        color: var(--Tarawera);
         font-size: 15px;
         text-decoration: none !important; }
         .site-navbar .site-navigation .site-menu > li > a:hover {
-          color: #000; }
+          color: var(--Cinnabar); }
       .site-navbar .site-navigation .site-menu > li:last-child {
         padding-right: 0; }
         .site-navbar .site-navigation .site-menu > li:last-child > a {
@@ -519,7 +564,7 @@ add box shado
 /* Blocks */
 .site-blocks-cover {
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center center; }
   .site-blocks-cover.overlay {
     position: relative; }
@@ -599,7 +644,8 @@ add box shado
   transform: translateX(0%); }
 
 .feature-item {
-  background: #e6e6e6;
+  background: var(--Tarawera);
+  color: white;
   padding: 20px;
   text-align: center;
   border-radius: 4px;
@@ -618,6 +664,7 @@ add box shado
     transition: .3s all ease; }
   .feature-item h2 {
     font-size: 16px;
+    color: white;
     font-weight: 300;
     margin-bottom: 20px;
     -webkit-transition: .3s all ease;
@@ -628,12 +675,12 @@ add box shado
     display: inline-block;
     margin-bottom: 10px;
     padding: 2px 10px;
-    background: #cccccc;
+    background: var(--Cinnabar);
     -webkit-transition: .3s all ease;
     -o-transition: .3s all ease;
     transition: .3s all ease; }
   .feature-item:hover {
-    background: #28a745;
+    background: var(--Cinnabar);
     -webkit-transform: scale(1.05);
     -ms-transform: scale(1.05);
     transform: scale(1.05); }
@@ -642,7 +689,7 @@ add box shado
     .feature-item:hover h2 {
       color: #fff; }
     .feature-item:hover .counting {
-      background: #23923d;
+      background:var(--Tarawera);
       color: #fff; }
 
 .image-play {

@@ -22,16 +22,12 @@
                         </div>
                     </div>
                     <br>
-
                 </div>
+                
             @endforeach
-
         </div>
-
-                {{$companies->links()}}
-                <br>
-                <br>
-
+        <br>
+        {{$companies->links()}}
     </div>
 </div>
 @endsection

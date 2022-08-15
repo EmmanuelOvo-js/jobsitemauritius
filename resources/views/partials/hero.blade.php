@@ -1,5 +1,4 @@
-<div style="height: 113px;"></div>
-
+{{-- <div style="height: 113px;"></div> --}}
 <div class="site-blocks-cover overlay" style="background-image: url('external/images/hero_1.jpg');" data-aos="fade" data-stellar-background-ratio="0.5">
   <div class="container">
     <div class="row align-items-center">
@@ -25,7 +24,7 @@
               </div>
             </div>
             <div class="col-md-3">
-              <input type="submit" class="btn btn-search btn-primary btn-block" value="Search">
+              <input type="submit" class="btn btn-search btn-primary btn-block" id="navbtn" value="Search">
             </div>
           </div>
           

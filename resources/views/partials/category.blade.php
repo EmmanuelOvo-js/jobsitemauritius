@@ -1,4 +1,4 @@
-<div class="site-section">
+<div class="site-section-jordan-section">
     <div class="container">
       <div class="row">
         <div class="col-md-6 mx-auto text-center mb-5 section-heading">
@@ -75,7 +75,10 @@
    
       
       </div>
-      {{ $categories->links() }}
+      {{-- {{ $categories->links() }} --}}
       {{-- {{ $categories->appends(Illuminate\Support\Facades\Request::except('page'))->links() }} --}}
+    </div>
+    <div class="col-md-12 text-center mt-5">
+      <a href="#" class="btn btn-primary rounded py-3 px-5" id="navbtn"><span class="icon-plus-circle"></span> Show Categories</a>
     </div>
   </div>

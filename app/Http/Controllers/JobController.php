@@ -43,7 +43,7 @@ class JobController extends Controller
                 ->limit(10)->where('status',1)
                 ->get();
 
-        $categories = Category::with('jobs')->paginate(12);
+        $categories = Category::with('jobs')->take(12)->get();
         $posts = Post::where('status',1)->get(); //getting the posts that the status is 1. 1==live, 2==draft.
         $testimonial = Testimonial::orderBy('id','DESC')->first(); //Show 1 testimonail on main homepage
         $companies = Company::get()->random(6);

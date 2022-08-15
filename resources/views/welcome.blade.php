@@ -18,7 +18,7 @@
     @include('partials.category')
 
 
-    <div class="site-section bg-light">
+    <div class="site-section-jordan-section bg-light">
       <div class="container">
         <div class="row">
 
@@ -126,28 +126,27 @@
 
     @include('partials.testimonial')
 
+      <div class="site-blocks-cover overlay inner-page" style="background-image: url('external/images/hero_1.jpg');" 
+        data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-6 text-center" data-aos="fade">
+              <h1 class="h3 mb-0">Your Dream Job</h1>
+              <p class="h3 text-white mb-5">Is Waiting For You</p>
 
-    <div class="site-blocks-cover overlay inner-page" style="background-image: url('external/images/hero_1.jpg');" data-aos="fade" data-stellar-background-ratio="0.5">
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-md-6 text-center" data-aos="fade">
-            <h1 class="h3 mb-0">Your Dream Job</h1>
-            <p class="h3 text-white mb-5">Is Waiting For You</p>
-            <p><a href="{{route('register')}}" class="btn btn-outline-warning py-3 px-4">Job Seeker</a> <a href="{{route('employerRegister')}}" 
-                class="btn btn-warning py-3 px-4">Employer</a></p>
-            
+              <p><a href="{{route('register')}}" class="btn btn-outline-warning py-3 px-4">Job Seeker</a> 
+                <a href="{{route('employerRegister')}}" class="btn btn-warning py-3 px-4">Employer</a>
+              </p>             
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    
-
-    <div class="site-section site-block-feature bg-light">
+    <div class="site-section-jordan-section site-block-feature bg-light">
       <div class="container">
         
         <div class="text-center mb-5 section-heading">
-          <h2>Why Choose Us</h2>
+          <h2>Why Choose Jobsite</h2>
         </div>
 
         <div class="d-block d-md-flex border-bottom">
