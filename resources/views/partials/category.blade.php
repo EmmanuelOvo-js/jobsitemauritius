@@ -79,6 +79,6 @@
       {{-- {{ $categories->appends(Illuminate\Support\Facades\Request::except('page'))->links() }} --}}
     </div>
     <div class="col-md-12 text-center mt-5">
-      <a href="#" class="btn btn-primary rounded py-3 px-5" id="navbtn"><span class="icon-plus-circle"></span> Show Categories</a>
+      <a href="#" class="btn btn-primary rounded py-3 px-5" id="bodybtn"><span class="icon-plus-circle"></span> Show Categories</a>
     </div>
   </div>

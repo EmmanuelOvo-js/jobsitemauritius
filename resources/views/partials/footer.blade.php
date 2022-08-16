@@ -6,7 +6,7 @@
         <div class="col-md-4">
           <h3 class="footer-heading mb-4 text-white">About</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat quos rem ullam, placeat amet.</p>
-          <p><a href="#" class="btn btn-primary pill text-white px-4">Read More</a></p>
+          <p><a href="#" class="btn btn-primary pill text-white px-4" id="bodybtn">Read More</a></p>
         </div>
         <div class="col-md-6">
           <div class="row">
@@ -15,19 +15,19 @@
                 <ul class="list-unstyled">
                   <li><a href="#">About</a></li>
                   <li><a href="#">Services</a></li>
-                  <li><a href="#">Approach</a></li>
+                  <li><a href="#">Contact Us</a></li>
                   <li><a href="#">Sustainability</a></li>
                   <li><a href="#">News</a></li>
                   <li><a href="#">Careers</a></li>
                 </ul>
             </div>
             <div class="col-md-6">
-              <h3 class="footer-heading mb-4 text-white">Categories</h3>
+              <h3 class="footer-heading mb-4 text-white">Sign Up</h3>
                 <ul class="list-unstyled">
-                  <li><a href="#">Full Time</a></li>
-                  <li><a href="#">Freelance</a></li>
-                  <li><a href="#">Temporary</a></li>
-                  <li><a href="#">Internship</a></li>
+                  <li><a href="{{route('register')}}">Seeker</a></li>
+                  <li><a href="{{route('employerRegister')}}">Employer</a></li>
+                  {{-- <li><a href="#">Temporary</a></li>
+                  <li><a href="#">Internship</a></li> --}}
                 </ul>
             </div>
           </div>
@@ -41,7 +41,7 @@
                 <a href="#" class="pb-2 pr-2 pl-0"><span class="icon-facebook"></span></a>
                 <a href="#" class="p-2"><span class="icon-twitter"></span></a>
                 <a href="#" class="p-2"><span class="icon-instagram"></span></a>
-                <a href="#" class="p-2"><span class="icon-vimeo"></span></a>
+                <a href="#" class="p-2"><span class="icon-linkedin"></span></a>
 
               </p>
             </div>

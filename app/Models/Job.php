@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use App\Models\Testimonial;
 
 class Job extends Model
 {
@@ -29,12 +30,14 @@ class Job extends Model
         'salary',
     ];
 
-
-    
             
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public function testimonial(){
+        return $this->belongsToMany(Testimonial::class);
     }
 
     public function company(){

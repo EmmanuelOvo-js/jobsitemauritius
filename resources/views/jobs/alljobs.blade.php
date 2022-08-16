@@ -17,7 +17,7 @@
                             <select name="type" id="" class="form-control">
                                 <option value="">-Select Employment Type-</option>
                                 <option value="fulltime">Fulltime</option>
-                                <option value="perttime">Perttime</option>
+                                <option value="parttime">Parttime</option>
                                 <option value="casual">Casual</option>
                             </select>
                         </div>
@@ -33,7 +33,7 @@
                             <input type="text" name="address" class="form-control" placeholder="Address" aria-label="Address">
                         </div>
                         <div class="col-sm">
-                            <button type="submit" class="btn btn-search btn-primary btn-block">Search</button>
+                            <button type="submit" id="navbtn" class="btn btn-search btn-primary btn-block">Search</button>
                         </div>
                     
                     </div>

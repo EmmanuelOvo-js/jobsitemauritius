@@ -24,7 +24,7 @@
               </div>
             </div>
             <div class="col-md-3">
-              <input type="submit" class="btn btn-search btn-primary btn-block" id="navbtn" value="Search">
+              <input type="submit" class="btn btn-search btn-primary btn-block" id="bodybtn" value="Search">
             </div>
           </div>
           

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
-            $table->string('content');
+            $table->text('content');
             $table->string('name');
             $table->string('profession');
             $table->integer('video_id');

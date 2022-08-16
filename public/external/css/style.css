@@ -30,6 +30,26 @@
   border: var(--Tarawera);
 }
 
+#bodybtn{
+  color: white!important;
+  background: var(--Cinnabar);
+  border: var(--Cinnabar);
+}
+
+#bodybtn:hover{
+  color: white!important;
+  background: var(--Tarawera);
+  border: var(--Tarawera);
+}
+
+#bodylink{
+  color: var(--Cinnabar);
+}
+
+#bodylink:hover{
+  color: var(--Tarawera);
+}
+
 /* nav dropdown hover */
 #dropD:hover{
   background: var(--Cinnabar);
@@ -49,8 +69,6 @@
   border: var(--Cinnabar);
 }
 
-
-
 /* End of Jordan CSS*/
 
 body {
@@ -59,7 +77,10 @@ body {
   font-weight: 400;
   font-size: 1rem;
   font-family: "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; 
+  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+  "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; 
+  padding-top: 7em; 
+  /* jordan added the padding-top because of the fixed nav */
 }
 
 ::-moz-selection {
@@ -276,7 +297,7 @@ a {
 .site-navbar-wrap {
   box-shadow: 10px 0 30px rgba(0, 0, 0, 0.066);
   background: white !important;
-  /* position: fixed; */
+  position: fixed;
   z-index: 99;
   width: 100%;
   padding: 20px 0;
@@ -623,7 +644,7 @@ a {
     position: absolute;
     bottom: 0;
     height: 2px;
-    background: #28a745;
+    background: var(--Cinnabar);
     left: 0;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
@@ -731,7 +752,7 @@ a {
   .jobs-wrap .job-item.last {
     border-bottom: none !important; }
   .jobs-wrap .job-item.fulltime {
-    border-left: 3px solid #26baee; }
+    border-left: 3px solid var(--Cinnabar); }
   .jobs-wrap .job-item.freelance {
     border-left: 3px solid #f8b500; }
   .jobs-wrap .job-item.partime {
