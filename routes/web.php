@@ -122,6 +122,15 @@ Route::get('/dashboard/{id}/jobs','App\Http\Controllers\DashboardController@chan
 Route::get('testimonial','App\Http\Controllers\TestimonialController@index')->middleware('admin');
 Route::get('testimonial/create','App\Http\Controllers\TestimonialController@create')->middleware('admin');
 Route::post('testimonial/create','App\Http\Controllers\TestimonialController@store')->name('testimonial.store')->middleware('admin');
+Route::get('testimonial/{id}/edit','App\Http\Controllers\TestimonialController@edit')->name('testimonial.edit')->middleware('admin');
+Route::post('testimonial/destroy','App\Http\Controllers\TestimonialController@destroy')->name('testimonial.delete')->middleware('admin');
+Route::post('testimonial/{id}/update','App\Http\Controllers\TestimonialController@update')->name('testimonial.update')->middleware('admin');
 
 //email
 Route::post('/job/mail','App\Http\Controllers\EmailController@send')->name('mail');
+
+//About page
+Route::get('/about', 'App\Http\Controllers\UserController@about');
+
+//Contact page
+Route::get('/contact', 'App\Http\Controllers\UserController@contact');

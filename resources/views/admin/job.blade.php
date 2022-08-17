@@ -3,17 +3,23 @@
 
 <div class="site-section">
     <div class="container">
-      <h1>All Jobs</h1>
         @if(Session::has('message'))
           <div class="alert alert-success">{{Session::get('message')}}</div>
         @endif
-
         <div class="row">
+
+          <div class="col-md-10">
+            <h1>All Jobs</h1>
+          </div>
+          <div class="col-md-2">
+            <a href="{{_('/dashboard')}}"><button class="btn btn-primary float-right" id="bodybtn">Back</button></a> 
+          </div>
+
           <div class="col">
             <div class="card">
               <div class="card-header">
                   All jobs
-              </div>
+              </div>           
               <div class="card-body">
 
                   <table class="table table-striped">
@@ -53,8 +59,5 @@
         </div>
     </div>
 </div>
-<br>
-<br>
-<br>
 
 @endsection

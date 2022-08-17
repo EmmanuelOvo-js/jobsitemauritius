@@ -126,9 +126,7 @@
            {{ $jobs->appends(Illuminate\Support\Facades\Request::except('page'))->links() }}
            
         </div>
-            <br>
-           <br>
-           <br>
+        
     </div>
 </div>
 

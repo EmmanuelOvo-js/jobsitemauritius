@@ -18,12 +18,12 @@
 							Add Post
 						</div>
 						<div class="card-body">
-							<form action="{{route('testimonial.store')}}" method="POST">@csrf
+							<form action="{{route('testimonial.update',[$testimonials->id])}}" method="POST">@csrf
 								
 								<div class="form-group">
 									<label>Content</label>
 									<textarea id="editors" name="content" class="form-control @error('content') is-invalid @enderror">
-									{{ old('content') }}</textarea>
+									{{$testimonials->content}}</textarea>
 
 									@error('content')
 										<span class="invalid-feedback" role="alert">
@@ -36,7 +36,7 @@
 
 								<div class="form-group">
 									<label>Name</label>
-									<input type="text" name="name" class="form-control @error('name') is-invalid @enderror"  value="{{ old('name') }}"> 
+									<input type="text" name="name" class="form-control @error('name') is-invalid @enderror"  value="{{$testimonials->name}}"> 
 									@error('name')
 										<span class="invalid-feedback" role="alert">
 											<strong>{{ $message }}</strong>
@@ -46,7 +46,7 @@
 
 								<div class="form-group">
 									<label>Profession</label>
-										<input type="text" name="profession" class="form-control @error('profession') is-invalid @enderror" value="{{ old('profession') }}"> 
+										<input type="text" name="profession" class="form-control @error('profession') is-invalid @enderror" value="{{$testimonials->profession}}"> 
 
 										@error('profession')
 											<span class="invalid-feedback" role="alert">
@@ -57,7 +57,7 @@
 
 								<div class="form-group">
 									<label>Viemo Video id</label>
-									<input type="text" name="video_id" class="form-control @error('video_id') is-invalid @enderror" value="{{ old('video_id') }}"> 
+									<input type="text" name="video_id" class="form-control @error('video_id') is-invalid @enderror" value="{{$testimonials->video_id}}"> 
 
 									@error('video_id')
 										<span class="invalid-feedback" role="alert">
@@ -67,12 +67,13 @@
 								</div>
 								
 								<div class="form-group">
-									<button type="submit" class="btn btn-success">Submit</button>
+									<button type="submit" class="btn btn-success">Update</button>
 								</div>
 							</form>
 						</div>
 					</div>
 				</div>
+		    </div>
 		</div>
 </div>
 @endsection

@@ -28,8 +28,8 @@
 
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
                       <li><a href="{{route('company')}}">All Companies</a></li>  
-                      <li><a href="#">Contact</a></li>
-                      <li><a href="#">About Us</a></li>
+                      <li><a href="{{__('/contact')}}">Contact</a></li>
+                      <li><a href="{{__('/about')}}">About Us</a></li>
                       @if(!Auth::check())
 
                       <li>

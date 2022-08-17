@@ -10,7 +10,7 @@ class UserController extends Controller
     //Jordan added middleware for employer
     public function __construct()
     {
-        $this->middleware(['seeker', 'verified']);
+        $this->middleware(['seeker', 'verified'], ['except' => ['about','contact']]);
     }
 
     /**
@@ -124,6 +124,14 @@ class UserController extends Controller
         }
         
       
+    }
+
+    public function about(){
+        return view('about.index');
+    }
+
+    public function contact(){
+        return view('contact.index');
     }
     
     /**

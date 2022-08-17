@@ -42,6 +42,18 @@
   border: var(--Tarawera);
 }
 
+#bodybtnoutline{
+  color: white!important;
+  border: 1px solid var(--Cinnabar)!important;
+}
+
+#bodybtnoutline:hover{
+  color: white!important;
+  background: var(--Tarawera)!important;
+  border: 1px solid var(--Tarawera)!important;
+  border-radius: 5px;
+}
+
 #bodylink{
   color: var(--Cinnabar);
 }

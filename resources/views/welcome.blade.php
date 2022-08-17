@@ -134,8 +134,8 @@
               <h1 class="h3 mb-0">Your Dream Job</h1>
               <p class="h3 text-white mb-5">Is Waiting For You</p>
 
-              <p><a href="{{route('register')}}" class="btn btn-outline-warning py-3 px-4">Job Seeker</a> 
-                <a href="{{route('employerRegister')}}" class="btn btn-warning py-3 px-4">Employer</a>
+              <p><a href="{{route('register')}}" id="bodybtnoutline" class="btn btn-outline-warning py-3 px-4">Job Seeker</a> 
+                <a href="{{route('employerRegister')}}" id="bodybtn" class="btn btn-warning py-3 px-4">Employer</a>
               </p>             
             </div>
           </div>
