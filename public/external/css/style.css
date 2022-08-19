@@ -82,6 +82,29 @@
   border: var(--Cinnabar);
 }
 
+/* For paginate button  */
+
+.active .page-link{
+   color: white;
+    background: var(--Cinnabar)!important;
+    border: var(--Cinnabar)!important;
+}
+
+.page-link{
+  color: var(--Cinnabar);
+}
+
+.active .page-link:hover{
+  color: white;
+   background: var(--Tarawera)!important;
+   border: var(--Tarawera)!important;
+}
+
+.page-link:hover{
+  color: white;
+  background: var(--Tarawera)!important;
+}
+
 /* End of Jordan CSS*/
 
 body {
