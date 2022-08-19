@@ -1,9 +1,9 @@
 {{-- <div style="height: 113px;"></div> --}}
-<div class="site-blocks-cover overlay" style="background-image: url('external/images/hero_1.jpg');" data-aos="fade" data-stellar-background-ratio="0.5">
+<div class="site-blocks-cover overlay" style="background-image: url('external/images/jobsitebg.jpg');" data-aos="fade" data-stellar-background-ratio="0.5">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-12" data-aos="fade">
-        <h1>Find Job</h1>
+        <h1>Find Your Dream Job in Mauritius</h1>
         <form action="{{route('alljobs')}}" method="get">
           <div class="row mb-3">
             <div class="col-md-9">

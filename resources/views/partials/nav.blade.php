@@ -27,9 +27,10 @@
                     <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
-                      <li><a href="{{route('company')}}">All Companies</a></li>  
-                      <li><a href="{{__('/contact')}}">Contact</a></li>
+                      <li><a href="{{route('company')}}">All Companies</a></li> 
                       <li><a href="{{__('/about')}}">About Us</a></li>
+                      <li><a href="{{__('#')}}">News</a></li>
+                      
                       @if(!Auth::check())
 
                       <li>
@@ -58,6 +59,10 @@
                           @endguest
                               
                           </a>
+
+                          @if(Auth::user()->user_type==='employer')
+                          <li><a href="{{__('/contact')}}">Contact</a></li>
+                          @endif
 
                           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" >
                              
@@ -110,7 +115,7 @@
                           @else
 
                           {{-- show logout if user is logged in --}}
-                          <a class="btn btn-primary text-white rounded" href="{{ route('logout') }}"
+                          <a class="btn btn-primary text-white rounded" id="navbtn" href="{{ route('logout') }}"
                           onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                           {{ __('Logout') }}

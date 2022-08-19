@@ -4,16 +4,15 @@
     <div class="site-section">
       <div class="container">
         <h3 class="display-4 text-center">Employer Registration</h3>
-        <div class="row">
             @if(Session::has('message'))
-                 <div class="alert alert-success">
-                    {{Session::get('message')}}
-                </div>
+              <div class="alert alert-success">
+                {{Session::get('message')}}
+              </div>
             @endif
-
+        <div class="row">
           <div class="col-md-12 col-lg-8 mb-5">
             
-            <form method="POST" action="" class="p-5 bg-white">
+            <form method="POST" action="{{ route('emp.register') }}" class="p-5 bg-white">
                         @csrf
 
                         {{-- inserting user_type data --}}
@@ -79,7 +78,7 @@
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <input type="submit" value="Register as Employer" class="btn btn-primary  py-2 px-5">
+                  <input type="submit" value="Register as Employer" id="bodybtn" class="btn btn-primary  py-2 px-5">
                 </div>
               </div>
 
@@ -93,7 +92,7 @@
             <div class="p-4 mb-3 bg-white">
               <h3 class="h5 text-black mb-3">More Info</h3>
               <p>Once you create an account a verification link will be sent to your email.</p>
-              <p><a href="#" class="btn btn-primary  py-2 px-4">Learn More</a></p>
+              <p><a href="#" id="bodybtn" class="btn btn-primary  py-2 px-4">Learn More</a></p>
             </div>
           </div>
         </div>

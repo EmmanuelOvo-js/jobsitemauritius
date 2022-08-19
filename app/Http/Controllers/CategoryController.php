@@ -26,7 +26,7 @@ class CategoryController extends Controller
 		}
 	   else
 	   { // show all latest post on the page. do not forget jordan
-		$categories = Category::with('jobs')->paginate(12);
+		$categories = Category::with('jobs')->paginate(20);
 		return view('partials.allcategory', compact('categories'));
 	   }
 	   //end search
