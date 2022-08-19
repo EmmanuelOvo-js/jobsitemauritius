@@ -214,9 +214,9 @@ class JobController extends Controller
         $keyword = $request->get('position');
         // $keywords = request('title'); You can also do it this way.
         $type = $request->get('type');
-        $category = $request->get('category_id');
+        // $category = $request->get('category_id');
         $address = $request->get('address');
-        if ($keyword||$type||$category||$address){
+        if ($keyword||$type||$address){
             $jobs = Job::where('position','LIKE','%'.$keyword.'%')
                         ->where('type','LIKE','%'.$type.'%')
                         // ->where('category_id', $category)

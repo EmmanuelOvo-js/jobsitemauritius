@@ -55,6 +55,8 @@ Route::post('/unsave/{id}', 'App\Http\Controllers\FavouriteController@unSaveJob'
 
 //category
 Route::get('/category/{id}','App\Http\Controllers\CategoryController@index')->name('category.index');
+// category listing page and search form
+Route::get('/allcategory','App\Http\Controllers\CategoryController@allcategory')->name('all.category');
 
 //For envelop icon in jobs/show.blade, to share specific job via email
 Route::post('/jobs/mail','App\Http\Controllers\EmailController@send')->name('mail');
