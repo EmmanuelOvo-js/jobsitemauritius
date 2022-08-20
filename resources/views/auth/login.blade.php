@@ -16,8 +16,7 @@
                 <div class="col-md-6 mb-5 align-self-center">
                     <form method="POST" action="{{ route('login') }}" class="p-5 bg-white">
                                 @csrf
-                        <h3>Login</h3>
-                        <br>                                 
+                                                 
                                 <div class="form-group row">
                                     <div class="col-md-12">Email</div>        
                                     <div class="col-md-12">

@@ -18,19 +18,27 @@
 
       <div class="col-md-12 mb-5">
       
-        <form method="POST" action="" class="p-5 bg-white">
+        <form method="POST" action="{{route('mail.contact')}}" class="p-5 bg-white" enctype="multipart/form-data">
           @csrf
-  
+          
+          {{-- Alert for contact form email --}}
+          @if(Session::has('message'))
+            <div class="alert alert-success">{{Session::get('message')}}</div>
+          @endif
+
+          @if(Session::has('err_message'))
+              <div class="alert alert-danger">{{Session::get('err_message')}}</div>
+          @endif
             <div class="form-group row">
             {{-- end here --}}
   
                 <div class="col-md-12">Company Name</div>
   
                 <div class="col-md-12">
-                    <input id="cname" type="text" placeholder="Company Name" class="form-control @error('cname') is-invalid @enderror" 
-                    name="cname" value="{{ old('cname') }}" required autocomplete="cname" autofocus>
+                    <input id="companyname" type="text" placeholder="Company Name" class="form-control @error('companyname') is-invalid @enderror" 
+                    name="companyname" value="{{ old('companyname') }}" required autocomplete="companyname" autofocus>
   
-                    @error('cname')
+                    @error('companyname')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -57,7 +65,7 @@
             </div>
 
             <div class="form-group row">
-                <div class="col-md-12">Message</div>
+                <div class="col-md-12">How Can We Be of Help</div>
                 <div class="col-md-12">
                       <textarea type="text" name="message" id="message" cols="30" rows="10" class="form-control @error('message') is-invalid 
                       @enderror">
@@ -65,6 +73,19 @@
                       </textarea>
 
                       @error('message')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-12">Screenshot</div>
+                <div class="col-md-12">
+                    <input type="file" class="form-control" name="screenshot"> 
+
+                      @error('screenshot')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>

@@ -29,7 +29,7 @@
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
                       <li><a href="{{route('company')}}">All Companies</a></li> 
                       <li><a href="{{__('/about')}}">About Us</a></li>
-                      <li><a href="{{__('#')}}">News</a></li>
+                      <li><a href="#">News</a></li>
                       
                       @if(!Auth::check())
 
@@ -44,7 +44,6 @@
                         </div>
                       </li>
                           
-                        
                         @else
                         <li class="nav-item dropdown">
                           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" 
@@ -61,7 +60,7 @@
                           </a>
 
                           @if(Auth::user()->user_type==='employer')
-                          <li><a href="{{__('/contact')}}">Contact</a></li>
+                          <a href="{{__('/contact')}}">Contact</a>
                           @endif
 
                           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" >

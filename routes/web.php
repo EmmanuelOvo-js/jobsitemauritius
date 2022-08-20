@@ -131,8 +131,11 @@ Route::post('testimonial/{id}/update','App\Http\Controllers\TestimonialControlle
 //email
 Route::post('/job/mail','App\Http\Controllers\EmailController@send')->name('mail');
 
+//contact form
+Route::post('/contact/mail','App\Http\Controllers\EmailController@contactform')->name('mail.contact');
+
 //About page
 Route::get('/about', 'App\Http\Controllers\UserController@about');
 
 //Contact page
-Route::get('/contact', 'App\Http\Controllers\UserController@contact');
+Route::get('/contact', 'App\Http\Controllers\UserController@contact')->middleware('admin');

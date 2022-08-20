@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendCF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendJob;
@@ -41,8 +42,30 @@ class EmailController extends Controller
     		return redirect()->back()->with('message','Job link sent to '.$emailTo);
 
     	}catch(\Exception $e){
-    		return redirect()->back()->with('err_message','Sorry, Something went wrong. Please try later');
+    		return redirect()->back()->with('err_message','Sorry, Something went wrong. Please try again later');
 
     	}
     }
+
+	public function contactform(Request $request){
+
+		$homeUrl = url('/');
+
+		$dataform = [
+			'companyname'=>$request->get('companyname'),
+			'email'=>$request->get('email'),
+			'message'=>$request->get('message'),
+			'homeUrl'=>$homeUrl
+		];
+		
+		try{
+			Mail::to('awefadae@gmail.com', 'Admin')->send(new SendCF($dataform));
+			return redirect()->back()->with('message','Message sent Successfully');
+
+    	}catch(\Exception){
+    		return redirect()->back()->with('err_message','Sorry, Something went wrong. Please try again later');
+
+    	}
+	}
+
 }
