@@ -29,23 +29,32 @@
           @if(Session::has('err_message'))
               <div class="alert alert-danger">{{Session::get('err_message')}}</div>
           @endif
+
             <div class="form-group row">
-            {{-- end here --}}
   
-                <div class="col-md-12">Company Name</div>
+                <div class="col-md-12">Select Company</div>
   
-                <div class="col-md-12">
-                    <input id="companyname" type="text" placeholder="Company Name" class="form-control @error('companyname') is-invalid @enderror" 
-                    name="companyname" value="{{ old('companyname') }}" required autocomplete="companyname" autofocus>
-  
-                    @error('companyname')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-            </div>
-  
+                  <div class="col-md-12">
+                    <select id="lunchBegins" class="selectpicker" name="cname" data-live-search="true" data-live-search-style="begins" title="Select Company @error('email') is-invalid 
+                    @enderror" >
+                      <option value="">Select Company</option>
+
+                      @foreach (App\Models\Company::all() as $company)
+                          <option value="{{$company->cname}}">
+                              {{$company->cname}}
+                          </option>
+                      @endforeach   
+                    </select>
+    
+                      @error('cname')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                      @enderror
+                  </div>
+              </div>
+
+             
   
             <div class="form-group row">
         
@@ -57,6 +66,22 @@
                     value="{{ old('email') }}" required autocomplete="email">
   
                     @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="form-group row">
+  
+              <div class="col-md-12">Subject</div>
+
+                <div class="col-md-12">
+                    <input id="subject" type="text" placeholder="Subject" class="form-control @error('subject') is-invalid @enderror" 
+                    name="subject" value="{{ old('subject') }}" required autocomplete="subject" autofocus>
+  
+                    @error('subject')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -83,15 +108,18 @@
             <div class="form-group row">
                 <div class="col-md-12">Screenshot</div>
                 <div class="col-md-12">
-                    <input type="file" class="form-control" name="screenshot"> 
-
-                      @error('screenshot')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                    <input type="file" name="screenshot" class="form-control @error('message') is-invalid 
+                    @enderror"> 
                 </div>
+
+                @error('screenshot')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
             </div>
+
+    
   
             <div class="row form-group">
             <div class="col-md-12">

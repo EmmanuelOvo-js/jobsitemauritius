@@ -49,17 +49,25 @@ class EmailController extends Controller
 
 	public function contactform(Request $request){
 
+		$this->validate($request,[
+			'subject'=>'required|max:25',
+			'screenshot'=>'required|mimes:jpeg,jpg,png,pdf,webp'
+		]);
+
 		$homeUrl = url('/');
 
-		$dataform = [
-			'companyname'=>$request->get('companyname'),
-			'email'=>$request->get('email'),
-			'message'=>$request->get('message'),
-			'homeUrl'=>$homeUrl
-		];
-		
+			$dataform = [
+				'subject'=>$request->get('subject'),
+				'cname'=>$request->get('cname'),
+				'email'=>$request->get('email'),
+				'message'=>$request->get('message'),
+				'screenshot'=>$request->file('screenshot'),
+				'homeUrl'=>$homeUrl
+			];
+			
+			
 		try{
-			Mail::to('awefadae@gmail.com', 'Admin')->send(new SendCF($dataform));
+			Mail::to('laravelemail92@gmail.com')->send(new SendCF($dataform));
 			return redirect()->back()->with('message','Message sent Successfully');
 
     	}catch(\Exception){

@@ -60,7 +60,7 @@
                           </a>
 
                           @if(Auth::user()->user_type==='employer')
-                          <a href="{{__('/contact')}}">Contact</a>
+                          <a href="{{__('/contact')}}"><i class="fa fa-question-circle" id="bodylink"></i> Support</a>
                           @endif
 
                           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" >

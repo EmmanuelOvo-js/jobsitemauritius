@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use phpDocumentor\Reflection\Types\This;
 
 class SendCF extends Mailable
 {
@@ -28,6 +29,11 @@ class SendCF extends Mailable
      */
     public function build()
     {
-        return $this->markdown('email.contactform');
+        return $this->markdown('email.contactform')
+                    ->subject('A Company Requesting Support')
+                    ->attach($this->dataform['screenshot']->getRealPath(),[
+                        'as' => $this->dataform['screenshot']->getClientOriginalName()
+                    
+                    ]);
     }
 }
