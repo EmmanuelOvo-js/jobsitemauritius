@@ -27,7 +27,8 @@
                     <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
-                      <li><a href="{{route('company')}}">All Companies</a></li> 
+                      <li><a href="{{route('company')}}">Companies</a></li>
+                      <li><a href="{{route('alljobs')}}">Job Search</a></li>
                       <li><a href="{{__('/about')}}">About Us</a></li>
                       <li><a href="#">News</a></li>
                       
@@ -60,7 +61,7 @@
                           </a>
 
                           @if(Auth::user()->user_type==='employer')
-                          <a href="{{__('/contact')}}"><i class="fa fa-question-circle" id="bodylink"></i> Support</a>
+                          <a href="{{__('/contact')}}"><i class="fa fa-question-circle" id="bodylink"></i></a>
                           @endif
 
                           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" >

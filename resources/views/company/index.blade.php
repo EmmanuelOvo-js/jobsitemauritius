@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('content')
+
     <div class="album text-muted">
         <div class="site-section">
             <div class="container">

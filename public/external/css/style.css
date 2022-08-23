@@ -59,6 +59,15 @@
   text-decoration: none!important;
 }
 
+#bodylink2{
+  color: var(--Cinnabar);
+  text-decoration: none!important;
+}
+
+#bodylink2:hover{
+  color: white;
+}
+
 #bodylink:hover{
   color: var(--Tarawera);
 }
@@ -105,7 +114,74 @@
   background: var(--Tarawera)!important;
 }
 
+
+/* jordan hero cover */
+
+.jordan-hero-cover {
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center center;
+}
+.jordan-hero-cover h1{
+  color: white;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  padding-left: 3rem; 
+}
+
+.jordan-hero-cover h2{
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.2;
+  padding-left: 3rem; 
+}
+  .jordan-hero-cover.overlay {
+    position: relative; }
+    .jordan-hero-cover.overlay:before {
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: 0;
+      right: 0;
+      top: 0;
+      background: rgba(0, 0, 0, 0.4); }
+  .jordan-hero-cover, .jordan-hero-cover > .container > .row {
+    min-height: 150px;
+    height: calc(30vh); }
+    /* End of cover */
+
+  #left-col{
+    padding: 3em;
+    background: var(--Tarawera);
+  }
+
+
 /* End of Jordan CSS*/
+
+/* card */
+.j-card{
+  border: transparent;
+  
+}
+
+.j-card-head{
+  background: var(--Cinnabar);
+  color: white;
+  -webkit-box-shadow: -2px 3px 28px -1px rgba(0,0,0,0.52);
+  -moz-box-shadow: -2px 3px 28px -1px rgba(0,0,0,0.52);
+  box-shadow: -2px 3px 28px -1px rgba(0,0,0,0.52);
+}
+
+.j-card-body{
+  background: var(--Tarawera);
+  color: white!important;
+  -webkit-box-shadow: -2px 3px 28px -1px rgba(0,0,0,0.52);
+  -moz-box-shadow: -2px 3px 28px -1px rgba(0,0,0,0.52);
+  box-shadow: -2px 3px 28px -1px rgba(0,0,0,0.52);
+}
+/* end card */
 
 body {
   line-height: 1.7;
@@ -255,8 +331,8 @@ a {
 
 .site-footer {
   padding: 4em 0;
-  background: #0d0d0d;
-  color: rgba(255, 255, 255, 0.5);
+  background:var(--Tarawera);
+  color: white;
 }
   .site-footer .footer-heading {
     font-size: 20px; }
