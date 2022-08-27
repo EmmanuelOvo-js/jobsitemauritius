@@ -12,7 +12,7 @@
     {{-- Add this class to make nav scroll: site-navbar-wrap --}}
     <div class="site-navbar-wrap js-site-navbar bg-white fixed-top">
       <div class="container">
-        <div class="site-navbar bg-light">
+        <div class="site-navbar">
           <div class="py-1">
             <div class="row align-items-center">
               <div class="col-2">

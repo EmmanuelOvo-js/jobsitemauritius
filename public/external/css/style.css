@@ -18,6 +18,10 @@
   --Gray_Asparagus: #485444;
 }
 
+.iconcolor{
+  color: var(--Cinnabar);
+}
+
 #navbtn{
   color: white!important;
   background: var(--Cinnabar);
@@ -29,6 +33,20 @@
   background: var(--Tarawera);
   border: var(--Tarawera);
 }
+
+.outlinebtn{
+  color: white!important;
+  border: 1px solid var(--Cinnabar)!important;
+  background-color: var(--Cinnabar);
+}
+
+.outlinebtn:hover{
+  color: white!important;
+  border: 1px solid white!important;
+  background-color: transparent;
+}
+
+
 
 #bodybtn{
   color: white!important;
@@ -60,12 +78,12 @@
 }
 
 #bodylink2{
-  color: var(--Cinnabar);
+  color: white;
   text-decoration: none!important;
 }
 
 #bodylink2:hover{
-  color: white;
+  color: var(--Cinnabar);
 }
 
 #bodylink:hover{
@@ -119,8 +137,8 @@
 
 .jordan-hero-cover {
   background-size: cover;
-  background-repeat: repeat;
-  background-position: center center;
+  background-repeat:no-repeat;
+  background-position: center;
 }
 .jordan-hero-cover h1{
   color: white;
@@ -153,35 +171,63 @@
     /* End of cover */
 
   #left-col{
-    padding: 3em;
+    padding: 2em 0;
     background: var(--Tarawera);
   }
 
+    /* cmenu */
+    .cmeny{
+      background-color:#0c3c5c86;
+    }
+    /* End of cmenu */
 
-/* End of Jordan CSS*/
 
 /* card */
 .j-card{
-  border: transparent;
+  border: transparent!important;
   
 }
 
 .j-card-head{
-  background: var(--Cinnabar);
-  color: white;
+  background: var(--Cinnabar)!important;
+  color: white!important;
   -webkit-box-shadow: -2px 3px 28px -1px rgba(0,0,0,0.52);
   -moz-box-shadow: -2px 3px 28px -1px rgba(0,0,0,0.52);
   box-shadow: -2px 3px 28px -1px rgba(0,0,0,0.52);
 }
 
 .j-card-body{
-  background: var(--Tarawera);
+  background: var(--Gray_Asparagus)!important;
   color: white!important;
   -webkit-box-shadow: -2px 3px 28px -1px rgba(0,0,0,0.52);
   -moz-box-shadow: -2px 3px 28px -1px rgba(0,0,0,0.52);
   box-shadow: -2px 3px 28px -1px rgba(0,0,0,0.52);
 }
 /* end card */
+.leftavarter{
+  -webkit-box-shadow: -1px -4px 23px -3px rgba(0,0,0,0.57);
+-moz-box-shadow: -1px -4px 23px -3px rgba(0,0,0,0.57);
+box-shadow: -1px -4px 23px -3px rgba(0,0,0,0.57);
+}
+.cleftdiv1 h4{
+  padding-bottom: 1em;
+  color: white;
+}
+
+.cleftdiv2{
+  border: 1px solid var(--Gray_Asparagus);
+  padding: 2em;
+}
+
+.cleftdiv2 h4{
+  font-weight: 500;
+  color: white;
+}
+.cleftdiv2 p{
+  color: white;
+}
+
+/* End of Jordan CSS*/
 
 body {
   line-height: 1.7;
