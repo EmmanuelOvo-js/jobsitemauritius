@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Models\Post;
+use App\Models\Profile;
 use App\Models\Testimonial;
 
 class JobController extends Controller
@@ -153,7 +154,7 @@ class JobController extends Controller
 
     public function myjobs()
     {
-        $jobs = Job::where('user_id',auth()->user()->id)->orderBy('created_at','desc')->get();
+        $jobs = Job::where('user_id',auth()->user()->id)->orderBy('created_at','desc')->paginate(10);
         return view('jobs.myjobs', compact('jobs'));
     }
 
@@ -189,7 +190,7 @@ class JobController extends Controller
     public function applicant()
     {
         // checks
-        $applicants = Job::has('users')->where('user_id',auth()->user()->id)->get();
+        $applicants = Job::has('users')->where('user_id',auth()->user()->id)->paginate(10);
         return view('jobs.applicants',compact('applicants'));
         
     }

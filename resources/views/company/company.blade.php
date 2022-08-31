@@ -16,26 +16,26 @@
         <div class="container">
           <div class="row">
             @foreach($companies as $company)
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                @if(empty($company->logo))
-                    <img src="{{asset('avatar/man.jpg')}}" class="card-img-top" alt="company image">
-                @else
-                    <img src="{{asset('avatar/man.jpg')}}" class="card-img-top" alt="company image">
-                @endif
-        
-                <div class="card-body">
-                <h5 class="card-title">{{$company->cname}}</h5>
-                  <p class="card-text">{{str_limit($company->description,40)}}</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <a href="{{route('company.index',[$company->id,$company->slug])}}" id="bodybtn" class="btn btn-sm btn-primary">View Company</a>
+              <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                  @if(empty($company->logo))
+                      <img src="{{asset('avatar/man.jpg')}}" class="card-img-top" alt="company image">
+                  @else
+                      <img src="{{asset('avatar/man.jpg')}}" class="card-img-top" alt="company image">
+                  @endif
+          
+                  <div class="card-body">
+                  <h5 class="card-title">{{$company->cname}}</h5>
+                    <p class="card-text">{{str_limit($company->description,40)}}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                          <a href="{{route('company.index',[$company->id,$company->slug])}}" id="bodybtn" class="btn btn-sm btn-primary">View Company</a>
+                      </div>
+                      <small class="text-muted">{{$company->created_at->diffForHumans()}}</small>
                     </div>
-                    <small class="text-muted">9 mins</small>
                   </div>
                 </div>
               </div>
-            </div>
             @endforeach
             </div>
             {{$companies->links()}}

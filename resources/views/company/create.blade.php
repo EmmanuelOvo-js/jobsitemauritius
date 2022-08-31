@@ -5,9 +5,9 @@
 
             @include('company.cLeftcol')
            
-            <div class="col-md-9" style="padding:0px!important;">
+            <div class="col-md-10" style="padding:0px!important;">
                 {{-- hero col --}}
-                <div class="jordan-hero-cover overlay" style="background-image: url('/external/images/contact.jpg');">
+                <div class="jordan-hero-cover overlay" style="background-image: url('/external/images/mau.jpg');">
                     <div class="container">
                     <div class="row align-items-center">
                         <div class="col-12">
@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 
-                <div class="row" data-aos="flip-up" style="padding:3%;">
+                <div class="row" data-aos="zoom-in" style="padding:3%;">
                     <div class="col-md-7">
                         {{-- Company info form --}}
                         <div class="card j-card">

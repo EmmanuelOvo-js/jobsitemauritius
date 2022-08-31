@@ -1,7 +1,7 @@
 
 
 {{-- Side About Company--}}
-    <div class="col-md-3" id="left-col">
+    <div class="col-md-2" id="left-col">
 
         <div class="avater text-center cleftdiv1">
 
@@ -13,8 +13,7 @@
                 class="rounded-circle leftavarter" 
                 alt="company logo"width="140" height="140">
             @endif
-                
-                <h4> <i class="fa fa-user iconcolor" ></i> {{Auth::user()->company->cname}}</h4>
+            <h4> <i class="fa fa-user iconcolor"></i> {{Auth::user()->company->cname}}</h4>
             
         </div>
         

@@ -44,10 +44,9 @@ class UserController extends Controller
         $this->validate($request, [
             'address' => 'required',
             'phone_number' => 'required|min:10|numeric', //instaed of numeric you can use: (01)(0-9){9} starts with 01,9 characters
-            'experience' => 'required|min:25',
+            'experience' => 'required',
             'bio' => 'required|min:25',
-            
-             
+            'degree' => 'required|max:30',
         ]);
 
         $user_id = auth()->user()->id;
@@ -58,6 +57,7 @@ class UserController extends Controller
             'phone_number'=>request('phone_number'),
             'experience'=>request('experience'),
             'bio'=>request('bio'),
+            'degree'=>request('degree'),
 
         ]);
         return redirect()->back()->with('message','Profile Successfully Updated!');

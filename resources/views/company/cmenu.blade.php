@@ -3,7 +3,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse cmeny" id="navbarsExample08">
+    <div class="collapse navbar-collapse cmenu" id="navbarsExample08">
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="{{ route('company.view') }}"><i class="fa fa-building iconcolor"></i>  

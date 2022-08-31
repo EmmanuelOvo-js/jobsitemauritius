@@ -73,9 +73,10 @@
                             </div>
                             &nbsp;
                             <div class="form-group">
-                                <label for="experience">Experience</label>
-                                <textarea name="experience" id="" cols="30" rows="10" class="form-control">
-                                    {{Auth::user()->profile->experience}}</textarea>
+                                <label for="experience">Years of Experience</label>
+                                <input type="number" class="form-control" name="experience" 
+                                value="{{Auth::user()->profile->experience}}">
+
                                 @if ($errors->has('experience'))
                                     <div class="error" style="color:red;">
                                         {{$errors->first('experience')}}
@@ -90,6 +91,19 @@
                                     @if ($errors->has('bio'))
                                         <div class="error" style="color:red;">
                                             {{$errors->first('bio')}}
+                                        </div>
+                                    @endif
+                            </div>
+                           
+                            &nbsp;
+                            <div class="form-group">
+                                <label for="degree">Degree</label>
+                                <input type="text" class="form-control" name="degree" 
+                                value="{{Auth::user()->profile->degree}}">
+                    
+                                    @if ($errors->has('degree'))
+                                        <div class="error" style="color:red;">
+                                            {{$errors->first('degree')}}
                                         </div>
                                     @endif
                             </div>

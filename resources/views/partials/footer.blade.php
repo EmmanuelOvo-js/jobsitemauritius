@@ -63,8 +63,6 @@
   </footer>
 </div>
 
-<script src="{{asset('external/js/datatables-simple-demo.js')}}"></script>
-<script src="{{asset('external/js/scripts.js')}}"></script>
 <script src="{{asset('external/js/jquery-3.3.1.min.js')}}"></script>
 <script src="{{asset('external/js/jquery-migrate-3.0.1.min.js')}}"></script>
 <script src="{{asset('external/js/jquery-ui.js')}}"></script>

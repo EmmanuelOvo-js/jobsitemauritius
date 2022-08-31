@@ -4,6 +4,7 @@
 <div class="site-section">
     <div class="container">
         <div class="row">
+            
             {{-- Search Form --}}
             <div class="col-md-12">
                 <form action="{{route('alljobs')}}" method="GET">  
@@ -130,7 +131,6 @@
     </div>
 </div>
 
-    
 @endsection
 {{-- <style>
     .fa{
