@@ -3,6 +3,54 @@
 
 {{-- Remove br tags and create a Hero BG for this show page, Also remove the site-navbar-wrap class in nav page --}}
 
+{{-- hero col --}}
+<div class="jordan-hero-cover overlay" style="background-image: url('/external/images/jobshow.jpg');">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-9 jobshowhero">
+                <p class="badge badge-success"><i class="fa fa-briefcase" aria-hidden="true"></i> {{$job->type}}</p>
+                <h3>{{str_limit($job->title,36)}}</h3>
+                <ul class="nav">
+                    <li>
+                        <p><i class="fa fa-money" aria-hidden="true"></i> {{$job->salary}}</p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-clock-o" aria-hidden="true"></i> Posted: {{$job->created_at->diffForHumans()}}</p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-hourglass-half" aria-hidden="true"></i> Closing: {{ date('F d, Y', strtotime($job->last_date)) }}</p>
+                    </li>
+                </ul>
+                <p><i class="fa fa-briefcase iconcolor" aria-hidden="true"></i> {{$job->company->cname}}</p>
+                <p><i class="fa fa-map-marker iconcolor" aria-hidden="true"></i> {{$job->address}}</p>
+            </div>
+            <div class="col-md-2 jobshowbtnleftcol d-flex justify-content-center">
+                <div class="applybtns">
+                    <div>
+                        {{-- Button disappears after logged in user submits form --}}
+                        {{-- checkApplication medthod was in job model and also a 'web route' for the form, and a function 'apply' in jobcontroller--}}
+                        @if(Auth::check()&&Auth::user()->user_type=='seeker')
+                
+                        @if(!$job->checkApplication() )
+                            <apply-component :jobid={{$job->id}}></apply-component>
+                        @else
+                        <center><span style="color:white; background:green; padding:3%; border-radius:5px;">You've Applied!</span></center>
+                        @endif
+                    </div>
+                    <div>
+                        <favourite-component :jobid={{$job->id}} :favourited={{$job->checkSaved()?'true':'false'}} ></favorite-component>
+                        @else
+                            Please login as a Seeker to apply for this job
+
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- End of hero --}}
+
 <div class="site-section">
     <div class="container">
             {{-- Alert for sendJob email --}}
@@ -80,8 +128,8 @@
                     <p>Last date to apply: {{ date('F d, Y', strtotime($job->last_date)) }}</p>
 
                     <p><a href="{{route('company.index',[$job->company->id,$job->company->slug])}}" 
-                        class="btn btn-warning" style="width: 100%;">Visit Company Page</a></p>
-
+                        class="btn btn-warning" style="width: 100%;">ViewCompany Profile</a>
+                    </p>
                     <p>
 
                         {{-- Button disappears after logged in user submits form --}}

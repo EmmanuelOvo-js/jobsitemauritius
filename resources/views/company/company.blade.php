@@ -29,7 +29,7 @@
                     <p class="card-text">{{str_limit($company->description,40)}}</p>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
-                          <a href="{{route('company.index',[$company->id,$company->slug])}}" id="bodybtn" class="btn btn-sm btn-primary">View Company</a>
+                          <a href="{{route('company.index',[$company->id,$company->slug])}}" id="bodybtn" class="btn btn-sm btn-primary">View Company Profile</a>
                       </div>
                       <small class="text-muted">{{$company->created_at->diffForHumans()}}</small>
                     </div>

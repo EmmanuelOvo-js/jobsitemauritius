@@ -1,48 +1,56 @@
 @extends('layouts.main')
 @section('content')
 
+{{-- hero col --}}
+<div class="jordan-hero-cover overlay" style="background-image: url('/external/images/jobshow.jpg');">
+    <div class="container">
+    <div class="row align-items-center">
+        {{-- Search Form --}}
+        <div class="col-md-12">
+            <form action="{{route('alljobs')}}" method="GET">  
+
+                <div class="row g-3">
+                    
+                    <div class="col-md-4">
+                        <input type="text" name="position" class="form-control" placeholder="Type in a job position" aria-label="Keyword">
+                    </div>
+                    <div class="col-md-3">
+                        <select name="type" id="" class="form-control">
+                            <option value="">-Select Employment Type-</option>
+                            <option value="fulltime">Fulltime</option>
+                            <option value="parttime">Parttime</option>
+                            <option value="casual">Casual</option>
+                        </select>
+                    </div>
+                    {{-- <div class="col-sm"> 
+                        <select name="category" id="" class="form-control">
+                            <option value="">-Select Category-</option>
+                            @foreach (App\Models\Category::all() as $cat)
+                                <option value="{{$cat->id}}">{{$cat->name}}</option>
+                            @endforeach
+                        </select>
+                    </div> --}}
+                    <div class="col-md-3">
+                        <input type="text" name="address" class="form-control" placeholder="Address" aria-label="Address">
+                    </div>
+                    <div class="col-sm">
+                        <button type="submit" id="navbtn" class="btn btn-search btn-primary btn-block">Search</button>
+                    </div>
+                
+                </div>
+
+            </form>
+        </div>
+        {{-- End Search Form --}}  
+    </div>
+    </div>
+</div>
+{{-- End of hero --}}
+
 <div class="site-section">
     <div class="container">
         <div class="row">
             
-            {{-- Search Form --}}
-            <div class="col-md-12">
-                <form action="{{route('alljobs')}}" method="GET">  
-
-                    <div class="row g-3">
-                        
-                        <div class="col-md-4">
-                            <input type="text" name="position" class="form-control" placeholder="Type in a job position" aria-label="Keyword">
-                        </div>
-                        <div class="col-md-3">
-                            <select name="type" id="" class="form-control">
-                                <option value="">-Select Employment Type-</option>
-                                <option value="fulltime">Fulltime</option>
-                                <option value="parttime">Parttime</option>
-                                <option value="casual">Casual</option>
-                            </select>
-                        </div>
-                        {{-- <div class="col-sm"> 
-                            <select name="category" id="" class="form-control">
-                                <option value="">-Select Category-</option>
-                                @foreach (App\Models\Category::all() as $cat)
-                                    <option value="{{$cat->id}}">{{$cat->name}}</option>
-                                @endforeach
-                            </select>
-                        </div> --}}
-                        <div class="col-md-3">
-                            <input type="text" name="address" class="form-control" placeholder="Address" aria-label="Address">
-                        </div>
-                        <div class="col-sm">
-                            <button type="submit" id="navbtn" class="btn btn-search btn-primary btn-block">Search</button>
-                        </div>
-                    
-                    </div>
-
-                </form>
-            </div>
-            {{-- End Search Form --}}      
-
             {{-- <h1>Recent Jobs</h1> --}}
             {{-- <table class="table">
                 <thead>
@@ -78,7 +86,7 @@
                      @endif
                 </tbody>
             </table> --}}
-           <div class="col-md-12" style="padding-top:5%">
+           <div class="col-md-12">
            
                 <div class="rounded border jobs-wrap">
                     

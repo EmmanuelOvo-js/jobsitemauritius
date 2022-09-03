@@ -26,7 +26,7 @@
                         <div class="row">
                             @foreach ($applicants as $applicant)
                             @foreach ($applicant->users as $user)                   
-                                <div class="col-md-4" data-aos="zoom-in">
+                                <div class="col-md-4 applicantslist" data-aos="zoom-in">
                                         <a href="{{route('job.show',[$applicant->id,$applicant->slug])}}"><h3 class="mb-4">{{str_limit($applicant->title,27)}}</h3></a>
                                         <p style="word-break:break-all;">{{str_limit($user->profile->bio,90)}}</p>
                                         <div class="row mb-3">
@@ -35,7 +35,7 @@
                                             <div class="col-sm-6 py-2"><h6>Degree: <span class="text-secondary">{{$user->profile->degree}}</span></h6></div>
                                             <div class="col-sm-6 py-2"><h6>Experience: <span class="text-secondary">{{$user->profile->experience}} Years</span></h6></div>
                                             <div class="col-sm-6 py-2"><h6>Phone: <span class="text-secondary">{{$user->profile->phone_number}}</span></h6></div>
-                                            <div class="col-sm-6 py-2"><h6>Email: <span class="text-secondary">{{$user->email}}</span></h6></div>
+                                            <div class="col-sm-6 py-2" style="word-break:break-all;"><h6>Email: <span class="text-secondary">{{$user->email}}</span></h6></div>
                                             <div class="col-sm-6 py-2"><h6>Address: <span class="text-secondary">{{str_limit($user->profile->address,15)}}</span></h6></div>
                                             <div class="col-sm-6 py-2"><h6>Gender: <span class="text-secondary">{{$user->profile->gender}}</span></h6></div>
                                         </div>

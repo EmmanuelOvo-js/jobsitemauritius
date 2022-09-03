@@ -1,9 +1,9 @@
 <template>
     <div class="container">
         
-            <button v-if="show" @click.prevent="unsave()" class="btn btn-dark" style="width: 100%;">Unsave Job</button>
+            <button v-if="show" @click.prevent="unsave()" class="btn btn-dark unsave">Unsave Job <i class="fa fa-times" aria-hidden="true"></i></button>
 
-            <button v-else @click.prevent="save()" class="btn btn-info" style="width: 100%;">Save Job</button>
+            <button v-else @click.prevent="save()" class="btn btn-info save">Save Job <i class="fa fa-bookmark iconcolor" aria-hidden="true"></i></button>
 
     </div>
 </template>

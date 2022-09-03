@@ -46,8 +46,6 @@
   background-color: transparent;
 }
 
-
-
 #bodybtn{
   color: white!important;
   background: var(--Cinnabar);
@@ -144,7 +142,6 @@
   background: var(--Tarawera)!important;
 }
 
-
 /* jordan hero cover */
 
 .jordan-hero-cover {
@@ -209,7 +206,7 @@
 }
 
 .j-card-body{
-  background:rgb(96, 96, 96)!important;
+  background:var(--Gray_Asparagus)!important;
   color: white!important;
   -webkit-box-shadow: -2px 3px 28px -1px rgba(0,0,0,0.52);
   -moz-box-shadow: -2px 3px 28px -1px rgba(0,0,0,0.52);
@@ -266,6 +263,68 @@ box-shadow: -1px -4px 23px -3px rgba(0,0,0,0.57);
     color:white;
   }
 /* End Edit & delete button */
+
+/* Applicants List*/
+.applicantslist{
+  border-radius: 10px;
+  border: solid 1px var(--Tarawera);
+  padding: 1.5rem;
+}
+/* End of Applicants list */
+
+/* Show job Hero */
+.jobshowhero{
+ line-height:1%;
+}
+.jobshowhero h3{
+ color: white;
+ font-weight: 500;
+}
+.jobshowhero p{
+ color: rgba(255, 255, 255, 0.888);
+}
+.jobshowhero ul>li{
+  padding-right: 1rem;
+}
+
+.jobshowbtnleftcol{
+  background: rgba(255, 255, 255, 0.299);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.save{
+  margin-top:1rem;
+  background-color: transparent;
+  color: white;
+  border: solid 2px white;
+  border-radius: 5px;
+}
+
+.save:hover{
+  margin-top:1rem;
+  background-color: var(--Tarawera);
+  color: white;
+  border: solid 2px var(--Tarawera);
+  border-radius: 5px;
+}
+
+.unsave{
+  margin-top:1rem;
+  background-color: var(--Tarawera);
+  color: white;
+  border: solid 2px var(--Tarawera);
+  border-radius: 5px;
+}
+.unsave:hover{
+  margin-top:1rem;
+  background-color: transparent;
+  color: white;
+  border: solid 2px var(--Cinnabar);
+  border-radius: 5px;
+}
+/* End Show job Hero */
+
 
 /* End of Jordan CSS*/
 
@@ -783,8 +842,8 @@ a {
 /* Blocks */
 .site-blocks-cover {
   background-size: cover;
-  background-repeat: repeat;
-  background-position: center center; }
+  background-repeat:no-repeat;
+  background-position: center; }
   .site-blocks-cover.overlay {
     position: relative; }
     .site-blocks-cover.overlay:before {
@@ -794,12 +853,12 @@ a {
       bottom: 0;
       right: 0;
       top: 0;
-      background: rgba(0, 0, 0, 0.4); }
+      background: #0c3c5ca7; }
   .site-blocks-cover, .site-blocks-cover > .container > .row {
-    min-height: 600px;
-    height: calc(100vh); }
+    min-height: 500px;
+    height: calc(65vh); }
   .site-blocks-cover.inner-page, .site-blocks-cover.inner-page > .container > .row {
-    min-height: 400px;
+    min-height: 300px;
     height: calc(30vh); }
   .site-blocks-cover .sub-text {
     font-size: 1.1rem;
