@@ -127,7 +127,7 @@ class JobController extends Controller
                              ->whereDate('last_date','>',date('Y-m-d'))
                              ->where('id','!=',$job->id)
                              ->where('status',1)
-                             ->limit(6)
+                             ->limit(3)
                              ->get();
         array_push($data,$jobsBasedOnCategories);
                            

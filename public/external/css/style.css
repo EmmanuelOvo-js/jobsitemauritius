@@ -175,8 +175,24 @@
       top: 0;
       background: rgba(0, 0, 0, 0.4); }
   .jordan-hero-cover, .jordan-hero-cover > .container > .row {
-    min-height: 150px;
-    height: calc(30vh); }
+    min-height: 160px;
+    height: calc(30vh);
+  
+    }
+    @media (max-width: 768px) {
+      .jordan-hero-cover, .jordan-hero-cover > .container > .row {
+        min-height: 500px;
+        flex: 0 0 100%;
+        max-width: 100%;
+        } }
+
+    @media (max-width: 350px) {
+      .jordan-hero-cover, .jordan-hero-cover > .container > .row {
+        min-height: 500px;
+        flex: 0 0 100%;
+        max-width: 100%;
+        } }
+
     /* End of cover */
 
   #left-col{
@@ -273,15 +289,16 @@ box-shadow: -1px -4px 23px -3px rgba(0,0,0,0.57);
 /* End of Applicants list */
 
 /* Show job Hero */
-.jobshowhero{
- line-height:1%;
-}
 .jobshowhero h3{
  color: white;
  font-weight: 500;
+ line-height: 1.5;
+ margin: 0!important;
 }
 .jobshowhero p{
  color: rgba(255, 255, 255, 0.888);
+ line-height: 1.5;
+ margin: 0!important;
 }
 .jobshowhero ul>li{
   padding-right: 1rem;
@@ -325,6 +342,54 @@ box-shadow: -1px -4px 23px -3px rgba(0,0,0,0.57);
 }
 /* End Show job Hero */
 
+/* Show jod show page */
+.desHead{
+  background: var(--Tarawera);
+  padding: 1.5rem;
+  border-radius: 7px;
+}
+
+.desBody{
+  padding:1rem;
+}
+
+.desHead h3{
+  margin: 0!important;
+  color: white;
+}
+
+.sharebtn{
+  background: var(--Cinnabar)!important;
+  border: solid 1px var(--Cinnabar);
+  padding: 8px;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px!important;
+}
+.sharebtn:hover{
+  background: transparent!important;
+  border:solid 1px var(--Cinnabar);
+  padding: 8px;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px!important;
+}
+
+.aboutCname{
+  border-radius:5px;
+  color: var(--Tarawera);
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 50px -8px rgba(0,0,0,0.18);
+  -moz-box-shadow: 0px 0px 50px -8px rgba(0,0,0,0.18);
+  box-shadow: 0px 0px 50px -8px rgba(0,0,0,0.18);
+}
+
+.aboutCname h3{
+  color: var(--Tarawera);
+  padding-bottom: 3px;
+  border-bottom: solid 2px var(--Cinnabar);
+}
+/* End Show job show page*/
 
 /* End of Jordan CSS*/
 

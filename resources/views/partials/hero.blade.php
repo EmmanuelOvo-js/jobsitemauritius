@@ -4,6 +4,7 @@
     <div class="row align-items-center">
       <div class="col-12" data-aos="fade">
         <h1>Find Your Dream Job in Mauritius</h1>
+
         <form action="{{route('alljobs')}}" method="get">
           <div class="row mb-3">
             <div class="col-md-9">
@@ -29,6 +30,7 @@
           </div>
           
         </form>
+        
       </div>
     </div>
   </div>

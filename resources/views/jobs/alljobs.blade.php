@@ -11,10 +11,10 @@
 
                 <div class="row g-3">
                     
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-3 mb-md-0">
                         <input type="text" name="position" class="form-control" placeholder="Type in a job position" aria-label="Keyword">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 mb-3 mb-md-0">
                         <select name="type" id="" class="form-control">
                             <option value="">-Select Employment Type-</option>
                             <option value="fulltime">Fulltime</option>
@@ -30,9 +30,10 @@
                             @endforeach
                         </select>
                     </div> --}}
-                    <div class="col-md-3">
+                    <div class="col-md-3 mb-3 mb-md-0">
                         <input type="text" name="address" class="form-control" placeholder="Address" aria-label="Address">
                     </div>
+
                     <div class="col-sm">
                         <button type="submit" id="navbtn" class="btn btn-search btn-primary btn-block">Search</button>
                     </div>
