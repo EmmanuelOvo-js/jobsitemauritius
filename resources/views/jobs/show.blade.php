@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-9 jobshowhero">
-                <p class="badge badge-success"><i class="fa fa-briefcase" aria-hidden="true"></i> {{$job->type}}</p>
+                <p class="badge badge-info"><i class="fa fa-briefcase" aria-hidden="true"></i> {{$job->type}}</p>
                 <h3>{{str_limit($job->title,36)}}</h3>
                 <ul class="nav">
                     <li>
@@ -41,8 +41,9 @@
                     <div>
                         <favourite-component :jobid={{$job->id}} :favourited={{$job->checkSaved()?'true':'false'}} ></favorite-component>
                         @else
+                        <p style="color: rgba(255, 255, 255, 0.632);">
                             Please login as a Seeker to apply for this job
-
+                        </p>
                         @endif
                     </div>
                 </div>
@@ -161,6 +162,7 @@
                     <h3><i class="fa fa-briefcase"></i> Recommended for You</h3>
                 </div>
                 <div class="row desBody">
+                    @if (count($jobRecommendations)>0)
                     @foreach($jobRecommendations as $jobRecommendation)
                         <div class="col-md-4">
                             <div class="card mb-4 shadow-sm">
@@ -178,6 +180,9 @@
                             </div>
                         </div>
                     @endforeach
+                    @else
+                        <td><p>No Recommendation Found</p></td>
+                    @endif
                 </div>                 
             </div>
            
@@ -187,5 +192,4 @@
 
     </div>
 </div>
-   
 @endsection

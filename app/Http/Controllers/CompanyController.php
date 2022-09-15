@@ -118,9 +118,23 @@ class CompanyController extends Controller
     }
 
     // for listing all companies in company route
-    public function company(){
-        $companies = Company::latest()->paginate(12);
-        return view('company.company',compact('companies'));
+    public function company(Request $request)
+    {
+
+         //front search
+         $cname = $request->get('cname');
+         if($cname){
+            $companies = Company::where('cname','LIKE','%'.$cname.'%')
+                        ->paginate(10);
+ 
+             return view('company.company',compact('companies'));
+ 
+         }
+        else{
+            $companies = Company::latest()->paginate(12);
+            return view('company.company',compact('companies'));
+        }
+
       }
 
     /**

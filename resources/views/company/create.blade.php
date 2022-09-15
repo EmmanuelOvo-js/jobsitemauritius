@@ -105,12 +105,13 @@
                         {{-- Profile Avatar --}}
                         {{-- If user has not uploaded a profile img display default avatar else display uploaded image --}}
                         @if (empty(Auth::user()->company->logo))
-                            <img src="{{asset('avatar/serwman1.jpg')}}" class="rounded" alt="company logo" width="100%" style="width: 100%;">
+                            <img src="{{asset('avatar/serwman1.jpg')}}" class="rounded-circle leftavarter" alt="company logo" width="100%" style="width: 100%;">
                          @else
-                            <img src="{{asset('uploads/logo')}}/{{Auth::user()->company->logo}}" class="rounded" 
+                            <img src="{{asset('uploads/logo')}}/{{Auth::user()->company->logo}}"
+                            width="140" height="330" class="rounded-circle leftavarter" 
                             alt="company logo" width="100" style="width: 100%">
                         @endif
-                
+                        &nbsp;
                         <form method="POST" action="{{route('logo')}}" enctype="multipart/form-data">
                             @csrf
                             <input type="file" class="j-card-body" style="margin-bottom:2%;" name="logo">

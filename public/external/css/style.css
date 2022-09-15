@@ -304,6 +304,30 @@ box-shadow: -1px -4px 23px -3px rgba(0,0,0,0.57);
   padding-right: 1rem;
 }
 
+.cHero{
+  color: white;
+  margin: 0!important;
+  text-align: left;
+}
+
+.cHero h3{
+  color: white;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0!important;
+}
+.cHero p{
+  line-height: 1.5;
+  margin: 0!important;
+}
+
+.cHeroBack{
+  background: rgba(255, 255, 255, 0.297);
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
 .jobshowbtnleftcol{
   background: rgba(255, 255, 255, 0.299);
   padding: 15px;

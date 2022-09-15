@@ -52,41 +52,6 @@
     <div class="container">
         <div class="row">
             
-            {{-- <h1>Recent Jobs</h1> --}}
-            {{-- <table class="table">
-                <thead>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </thead>
-                <tbody>
-                    @if (count($jobs)>0)
-                    @foreach ($jobs as $job)
-                    <tr>
-                        <td><img src="{{asset('uploads/logo')}}/{{$job->company->logo}}" width="80"></td>
-                        <td>Position: {{$job->position}}
-                            <br>
-                            <i class="fa fa-clock-o" aria-hidden="true">&nbsp;{{$job->type}}</i>
-                        </td>
-                        <td><i class="fa fa-map-marker" aria-hidden="true"></i> Address: {{$job->address}}</td>
-                        <td><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;Date: {{$job->created_at->diffForHumans()}} </td>
-                        <td>
-                            <a href="{{route('job.show',[$job->id,$job->slug])}}">
-                                <button class="btn btn-success btn-sm">
-                                    Apply
-                                </button>
-                            </a>
-                            
-                        </td>
-                    </tr>
-                     @endforeach
-                     @else
-                         <td>No jobs found</td>
-                     @endif
-                </tbody>
-            </table> --}}
            <div class="col-md-12">
            
                 <div class="rounded border jobs-wrap">

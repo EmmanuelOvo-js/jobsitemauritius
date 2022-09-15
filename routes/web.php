@@ -75,6 +75,7 @@ Route::post('company/create', 'App\Http\Controllers\CompanyController@store')->n
 Route::post('company/coverPhoto', 'App\Http\Controllers\CompanyController@coverPhoto')->name('cover.photo');// To make the form in create page update
 Route::post('company/logo', 'App\Http\Controllers\CompanyController@logo')->name('logo');// To make the form in create page update
 
+// company listing and search form
 Route::get('/company','App\Http\Controllers\CompanyController@company')->name('company');
 //-------------------------------------------------------------------------
 

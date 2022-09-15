@@ -22,7 +22,7 @@ class Company extends Model
     }
     
     public function job(){
-        return $this->hasMany('App\Models\Job');
+        return $this->hasMany(Job::class);
     }
 
     // public function jobs()
