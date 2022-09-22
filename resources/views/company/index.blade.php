@@ -1,4 +1,5 @@
 @extends('layouts.main')
+   
 @section('content')
 
     {{-- hero col --}}
@@ -50,34 +51,30 @@
                     <div class="bg-light">
                         <p style="word-break:break-all; padding: 25px;">{{$company->description}}</p>
                     </div>
-
+                    
                     <div class="desHead"><h3><i class="fa fa-info-circle"></i> {{$company->cname}} has ({{$company->job->count()}}) Jobs Listed</h3> </div>
 
-                    <table id="table" class="table"> 
-                        <thead class="d-none">
-                            <tr>
-                                <th>title-1</th>
-                                <th>title-2</th>
-                                <th>title-2</th>
-                                <th>title-2</th>
-                                <th>title-2</th>
+                    <table id="table" class="table table-responsive">
 
-                            </tr>
-                        </thead>                      
-                        <tbody>
-                     
-                            @foreach($company->job as $job)
-                            
+                            <thead class="d-none">
                                 <tr>
+                                    <th scope="col">title-1</th>
+                                    <th scope="col">title-2</th>
+                                    <th scope="col">title-2</th>
+                                    <th scope="col">title-2</th>
+                                    <th scope="col">title-2</th>
+
+                                </tr>
+                            </thead>                     
+                            <tbody>
+                                @foreach($company->job as $job)
+                                <tr class="bghover">
                                     <td>
                                         @if(empty($company->logo))
 
-                                            <img width="100" src="{{asset('avatar/img_avatar.png')}}">
-
+                                                <img width="100" src="{{asset('avatar/img_avatar.png')}}" alt="avartar" style="width: 3rem">
                                             @else
-
-                                            <img width="100" src="{{asset('uploads/logo')}}/{{$company->logo}}">
-
+                                                <img width="100" src="{{asset('uploads/logo')}}/{{$company->logo}}" alt="avartar">
                                         @endif
 
                                     </td>
@@ -87,45 +84,24 @@
                                         <i class="fa fa-clock-o"aria-hidden="true"></i>&nbsp;{{$job->type}}
                                     </td>
 
-                                    <td><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Address:{{$job->address}}</td>
+                                    <td><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Address:{{str_limit($job->address,20)}}</td>
 
                                     <td><i class="fa fa-globe"aria-hidden="true"></i>&nbsp;Date:{{$job->created_at->diffForHumans()}}</td>
 
                                     <td>
                                         <a href="{{route('job.show',[$job->id,$job->slug])}}">
-                                            <button class="btn btn-success btn-sm"> Apply
+                                            <button class="btn btn-success btn-sm" id="bodybtn"> Apply
                                             </button>
                                         </a>                                     
                                     </td>
                                 </tr>
-                            @endforeach
-                            {{-- {{ $company->links() }} --}}
-
-                        </tbody>
+                                @endforeach
+                            </tbody>
                     </table>
                 </div>                           
             </div>
         </div>
     </div>
-        
-
-
-
-    {{-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> --}}
-    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" defer></script>
-    <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#table').DataTable( {
-                dom: 'Bfrtip',
-                pageLength: 3
-            } );
-        } );
-    </script>
+    
     
 @endsection

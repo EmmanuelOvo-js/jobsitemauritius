@@ -2,10 +2,8 @@
 <link rel="stylesheet" href="{{asset('external/fonts/icomoon/style.css')}}">
 
 <link rel="stylesheet" href="{{asset('external/css/bootstrap.min.css')}}">
-<link rel="stylesheet" href="{{asset('external/css/bootstrap.min.css.map')}}">
 <link rel="stylesheet" href="{{asset('external/css/bootstrap-reboot.min.css')}}">
 <link rel="stylesheet" href="{{asset('external/css/bootstrap-grid.min.css')}}">
-
 <link rel="stylesheet" href="{{asset('external/css/magnific-popup.css')}}">
 <link rel="stylesheet" href="{{asset('external/css/jquery-ui.css')}}">
 <link rel="stylesheet" href="{{asset('external/css/owl.carousel.min.css')}}">
@@ -15,8 +13,6 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
 
-
-
 <link rel="stylesheet" href="{{asset('external/fonts/flaticon/font/flaticon.css')}}">
 
 <link rel="stylesheet" href="{{asset('external/css/aos.css')}}">
@@ -25,16 +21,12 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+{{-- data table --}}
+<link rel="stylesheet" href="{{asset('external/css/jquery.dataTables.min.css')}}">
+<link rel="stylesheet" href="{{asset('external/css/buttons.dataTables.min.css')}}">
+
+{{-- End data table --}}
+
 
  <!-- Scripts -->
  <script src="{{ asset('js/app.js') }}" defer></script>
-
-{{-- jordan Added from https://jqueryui.com/datepicker/--}}
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-
-<script>
-    $( function() {
-        $( "#datepicker" ).datepicker();
-    } );
-</script>

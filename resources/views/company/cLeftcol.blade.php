@@ -26,7 +26,7 @@
                 <p><i class="fa fa-volume-control-phone iconcolor" ></i> {{Auth::user()->company->phone}}</p>
                 <p><i class="fa fa-globe iconcolor" ></i> {{Auth::user()->company->website}}</p>
                 <p><a id="bodylink2" href="company/{{Auth::user()->company->slug}}">
-                    <i class="fa fa-link iconcolor" ></i> View Company Page 
+                    <i class="fa fa-link iconcolor" ></i> View Company Page
                     </a>
                 </p>
             </div>

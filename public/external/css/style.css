@@ -179,14 +179,14 @@
     height: calc(30vh);
   
     }
-    @media (max-width: 768px) {
+    @media (max-width: 48rem) {
       .jordan-hero-cover, .jordan-hero-cover > .container > .row {
         min-height: 500px;
         flex: 0 0 100%;
         max-width: 100%;
         } }
 
-    @media (max-width: 350px) {
+    @media (max-width: 21.875rem) {
       .jordan-hero-cover, .jordan-hero-cover > .container > .row {
         min-height: 500px;
         flex: 0 0 100%;
@@ -241,11 +241,10 @@ box-shadow: -1px -4px 23px -3px rgba(0,0,0,0.57);
 
 .cleftdiv2{
   border: 1px solid var(--Gray_Asparagus);
-  padding: 2em;
+  padding: 1.5em;
 }
 
 .cleftdiv2 h4{
-  font-weight: 500;
   color: white;
 }
 .cleftdiv2 p{
@@ -414,6 +413,64 @@ box-shadow: -1px -4px 23px -3px rgba(0,0,0,0.57);
   border-bottom: solid 2px var(--Cinnabar);
 }
 /* End Show job show page*/
+
+.table{
+  display: block !important;
+  overflow-x: auto !important;
+  width: 100% !important;
+}
+
+/* Data table */
+#table_wrapper{
+  margin-top: -3.5rem;
+}
+
+.table_filter{
+  padding-bottom: 5rem;
+  border: solid white!important;
+  color: white!important;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+  border: 1px solid white!important;
+  border-radius: 3px;
+  padding: 5px;
+  background-color: transparent!important;
+  margin-left: 3px;
+  margin-bottom: 3rem!important;
+  margin-right: 4rem!important;
+  color: white!important;
+}
+
+.dataTables_filter {
+  color: #fff!important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  color: white !important;
+  border: 1px solid var(--Cinnabar)!important;
+  background: var(--Cinnabar)!important;
+ /* background: linear-gradient(to bottom, var(--Cinnabar) 0%, var(--Tarawera) 100%)!important; */
+}
+
+.bghover:hover {
+  background: var(--Tarawera)!important;
+  color: white!important;
+}
+
+@media (max-width: 768px){
+  .dataTables_filter{
+    display: none!important;
+  }
+
+  #table_wrapper{
+    margin-top: 0;
+  }
+
+}
+/* End Data table */
+
 
 /* End of Jordan CSS*/
 
