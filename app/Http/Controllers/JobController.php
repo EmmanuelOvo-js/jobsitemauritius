@@ -8,10 +8,8 @@ use App\Models\Company;
 use App\http\Requests\JobPostRequest;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Models\Post;
-use App\Models\Profile;
 use App\Models\Testimonial;
 
 class JobController extends Controller
@@ -34,9 +32,6 @@ class JobController extends Controller
         // $jobs = Job::orderBy('created_at', 'desc')->get()->take('10');
         //show live jobs where stutus=live==1,draft==2.
         // $companies = Company::latest()->limit(8)->get();
-        //for ajax pagination -- not working
-        // $data = DB::table('categories')->paginate(12); --no working
-
        // $jobs = Job::latest()->limit(10)->where('status',1)->get();
         //To filter expired jobs
         $jobs = Job::latest()
@@ -50,13 +45,6 @@ class JobController extends Controller
         $companies = Company::get()->random(6);
         return view('welcome', compact('jobs', 'companies','categories','posts','testimonial'));
     }
-
-    // public function fetch_data(Request $request){
-    //     if($request->ajax()){
-    //         // $data = DB::table('categories')->paginate(12); --no working
-    //         return view('welcome', compact('categories'))->render();
-    //     }
-    // }
 
     /**
      * Show the form for creating a new resource.

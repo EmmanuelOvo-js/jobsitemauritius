@@ -1,7 +1,8 @@
 <template>
     <div class="container">
         <form @submit="formSubmit">
-            <button v-if="show" class="btn btn-success" id="bodybtn">Apply Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+            <button v-if="show" class="btn btn-success" id="bodybtn">Apply Now 
+                <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
 
             <div v-else class="alert alert-success">
                 Sent, Welldone!

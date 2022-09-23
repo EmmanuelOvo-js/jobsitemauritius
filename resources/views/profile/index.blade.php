@@ -21,7 +21,7 @@
                     <div class="card-body">               
                         <input type="file" class="form-control" name="avatar">
                         <br>
-                        <button class="btn btn-success" type="submit">Update</button>
+                        <button class="btn btn-success" type="submit" id="bodybtn">Update</button>
                         @if ($errors->has('avatar'))
                             <div class="error" style="color:red;">
                                     {{$errors->first('avatar')}}
@@ -110,7 +110,7 @@
                             &nbsp;
 
                             <div class="form-group">
-                                <button class="btn btn-success" type="submit">Update</button>
+                                <button class="btn btn-success" id="bodybtn" type="submit">Update</button>
                             </div>
                         </div>
                     </div>
@@ -134,13 +134,13 @@
 
                     {{-- To download cover letter from profile tables in database --}}
                     @if (!empty(Auth::user()->profile->cover_letter))
-                        <p><a download="cover_letter" href="{{Storage::url(Auth::user()->profile->cover_letter)}}">Cover Letter</a></p>
+                        <p><a download="cover_letter" id="bodylink" href="{{Storage::url(Auth::user()->profile->cover_letter)}}">Cover Letter</a></p>
                     @else
                         <p>Please uplaod cover letter</p>
                     @endif
                     {{-- To download resume from profile tables in database --}}
                     @if (!empty(Auth::user()->profile->resume))
-                        <p><a download="resume" href="{{Storage::url(Auth::user()->profile->resume)}}">Resume</a></p>
+                        <p><a download="resume" id="bodylink" href="{{Storage::url(Auth::user()->profile->resume)}}">Resume</a></p>
                     @else
                         <p>Please uplaod Resume</p>
                     @endif
@@ -156,7 +156,7 @@
                     <div class="card-body">                
                         <input type="file" class="form-control" name="cover_letter">                   
                         <br>
-                        <button class="btn btn-success float-end" type="submit">Update</button>
+                        <button class="btn btn-success float-end" type="submit" id="bodybtn">Update</button>
                          @if ($errors->has('cover_letter'))
                             <div class="error" style="color:red;">
                                     {{$errors->first('cover_letter')}}
@@ -175,7 +175,7 @@
                     <div class="card-body">               
                         <input type="file" class="form-control" name="resume">
                         <br>
-                        <button class="btn btn-success float-end" type="submit">Update</button>
+                        <button class="btn btn-success float-end" type="submit" id="bodybtn">Update</button>
                          @if ($errors->has('resume'))
                             <div class="error" style="color:red;">
                                     {{$errors->first('resume')}}
