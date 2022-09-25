@@ -77,11 +77,11 @@
 
 <script>
   $(document).ready(function() {
-      $('#table').DataTable( {
+      $('#CompanyProfileTable').DataTable( {
           dom: 'frtip',
-          buttons: [
-      'copy', 'csv', 'excel', 'pdf', 'print'
-  ],
+  //         buttons: [
+  //     'copy', 'csv', 'excel', 'pdf', 'print'
+  // ],
           pageLength: 3,
           
       } );

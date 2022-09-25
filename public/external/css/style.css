@@ -421,37 +421,32 @@ box-shadow: -1px -4px 23px -3px rgba(0,0,0,0.57);
 }
 
 /* Data table */
-#table_wrapper{
-  margin-top: -3.5rem;
-}
-
-.table_filter{
-  padding-bottom: 5rem;
-  border: solid white!important;
-  color: white!important;
-}
-
 .dataTables_wrapper .dataTables_filter input {
-  border: 1px solid white!important;
-  border-radius: 3px;
-  padding: 5px;
-  background-color: transparent!important;
-  margin-left: 3px;
-  margin-bottom: 3rem!important;
-  margin-right: 4rem!important;
-  color: white!important;
+  border: 2px solid var(--Tarawera)!important;
+  color: var(--Tarawera)!important;
 }
 
 .dataTables_filter {
-  color: #fff!important;
+  color: var(--Tarawera)!important;
 }
 
-.dataTables_wrapper .dataTables_paginate .paginate_button.current, 
-.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
   color: white !important;
   border: 1px solid var(--Cinnabar)!important;
   background: var(--Cinnabar)!important;
  /* background: linear-gradient(to bottom, var(--Cinnabar) 0%, var(--Tarawera) 100%)!important; */
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  color: white!important;
+  background: var(--Cinnabar)!important;
+  border: solid 1px var(--Cinnabar)!important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  color: white !important;
+  background: var(--Tarawera)!important;
+  border: solid 1px var(--Tarawera)!important;
 }
 
 .bghover:hover {
@@ -459,18 +454,22 @@ box-shadow: -1px -4px 23px -3px rgba(0,0,0,0.57);
   color: white!important;
 }
 
-@media (max-width: 768px){
+/* @media (max-width: 768px){
   .dataTables_filter{
     display: none!important;
   }
-
-  #table_wrapper{
-    margin-top: 0;
-  }
-
-}
+} */
 /* End Data table */
 
+.bg-table{
+  background: #f8f9fa;
+  padding: 1rem;
+}
+
+.dataTables_wrapper .dataTables_filter {
+  float: left!important;
+  text-align: left!important;
+}
 
 /* End of Jordan CSS*/
 
@@ -1014,12 +1013,12 @@ a {
   .site-blocks-cover h1 {
     font-weight: 700;
     color: #fff;
-    font-size: 2rem; }
+    font-size: 1rem; }
     .site-blocks-cover h1 strong {
       font-weight: 900; }
     @media (min-width: 768px) {
       .site-blocks-cover h1 {
-        font-size: 4rem;
+        font-size: 3rem;
         font-weight: 300;
         line-height: 1.2; } }
   .site-blocks-cover p {

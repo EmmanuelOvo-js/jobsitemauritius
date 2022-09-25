@@ -23,7 +23,7 @@
                                 class="rounded-circle leftavarter" width="140" height="140">
                             @endif
                         </li>
-                        <li style="padding: 1rem">
+                        <li style="padding: 0.6rem">
                             <h3>{{$company->cname}}</h3>
                             <p><i class="fa fa-external-link-square" aria-hidden="true"></i> {{$company->website}}</p>
                             <p><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{$company->slogan}}</p>
@@ -45,16 +45,11 @@
     <div class="site-section">
         <div class="container">
             <div class="row">            
-                <div class="col-lg-12">   
-
-                    <div class="desHead"><h3><i class="fa fa-briefcase"></i> About Company</h3></div>
-                    <div class="bg-light">
-                        <p style="word-break:break-all; padding: 25px;">{{$company->description}}</p>
-                    </div>
+                <div class="col-md-8 bg-table">   
                     
-                    <div class="desHead"><h3><i class="fa fa-info-circle"></i> {{$company->cname}} has ({{$company->job->count()}}) Jobs Listed</h3> </div>
+                    {{-- <div class="desHead"><h3><i class="fa fa-info-circle"></i> {{$company->cname}} has ({{$company->job->count()}}) Jobs Listed</h3> </div> --}}
 
-                    <table id="table" class="table table-responsive">
+                    <table id="CompanyProfileTable" class="table table-responsive">
 
                             <thead class="d-none">
                                 <tr>
@@ -69,28 +64,28 @@
                             <tbody>
                                 @foreach($company->job as $job)
                                 <tr class="bghover">
-                                    <td>
+                                    <th>
                                         @if(empty($company->logo))
 
                                                 <img width="100" src="{{asset('avatar/img_avatar.png')}}" alt="avartar" style="width: 3rem">
                                             @else
-                                                <img width="100" src="{{asset('uploads/logo')}}/{{$company->logo}}" alt="avartar">
+                                                <img width="100" src="{{asset('uploads/logo')}}/{{$company->logo}}" alt="avartar" style="width: 3rem">
                                         @endif
 
-                                    </td>
+                                    </th>
 
-                                    <td>Position:{{$job->position}}
+                                    <td>Position:{{str_limit($job->position,5)}}
                                     <br>
                                         <i class="fa fa-clock-o"aria-hidden="true"></i>&nbsp;{{$job->type}}
                                     </td>
 
-                                    <td><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Address:{{str_limit($job->address,20)}}</td>
+                                    <td><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Address:{{str_limit($job->address,15)}}
 
                                     <td><i class="fa fa-globe"aria-hidden="true"></i>&nbsp;Date:{{$job->created_at->diffForHumans()}}</td>
 
                                     <td>
                                         <a href="{{route('job.show',[$job->id,$job->slug])}}">
-                                            <button class="btn btn-success btn-sm" id="bodybtn"> Apply
+                                            <button class="btn btn-success btn-sm outlinebtn"> Apply
                                             </button>
                                         </a>                                     
                                     </td>
@@ -98,7 +93,19 @@
                                 @endforeach
                             </tbody>
                     </table>
-                </div>                           
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="aboutCname">
+                        <div>
+                            <h4><i class="fa fa-briefcase"></i> About {{$company->cname}}</h4>
+                        </div>
+                        <div class="aboutbody">
+                            <p>{{$company->description}}</p>
+                        </div>                   
+                    </div>
+                </div> 
+
             </div>
         </div>
     </div>
