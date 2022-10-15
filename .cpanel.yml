@@ -1,4 +1,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/jorddrgv/jobsite.jordantech-solutions.com/
-    - /bin/cp /public/ * $DEPLOYPATH
+    - /bin/cp /jobsite.jordantech-solutions.com/public $DEPLOYPATH
