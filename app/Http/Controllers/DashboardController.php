@@ -116,4 +116,5 @@ class DashboardController extends Controller
         $job->save();
         return redirect()->back()->with('message','Status updated successfully');
     }
-	}	
+
+}	

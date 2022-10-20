@@ -19,6 +19,7 @@
           <h2 class="heading mb-0 h5"><a href="{{route('post.show',[$post->id,$post->slug])}}" id="bodylink">{{$post->title}}</a></h2>
           <span class="mb-3 d-block post-date"></a>{{$post->created_at->diffForHumans()}} &bullet; By <a href="" style="color:var(--Tarawera)!important;">Admin</a></span>
           <p style="word-break: break-all;">{{str_limit($post->content,50)}}</p>
+          <a href="{{route('post.show',[$post->id,$post->slug])}}" class="btn-sm btn-primary rounded py-3 px-5" id="bodybtn">Read More</a>
         </div>
         @endforeach
         

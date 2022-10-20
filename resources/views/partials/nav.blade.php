@@ -17,7 +17,7 @@
             <div class="row align-items-center">
               <div class="col-2">
                 {{-- <h2 class="mb-0 site-logo"><a href="/">Job<strong class="font-weight-bold">Site</strong> </a></h2> --}}
-                <a href="{{ __('/') }}"><img src="/storage/uploads/Jobsite-logo.png" width="170"></a>
+                <a href="{{ __('/') }}"><img src="/uploads/logo/Jobsite-logo.png" width="170"></a>
               </div>
               
               <div class="col-10">

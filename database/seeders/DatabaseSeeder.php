@@ -20,36 +20,36 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->count(12)->create();
-        Company::factory()->count(12)->create();
-        Job::factory()->count(12)->create();
+        // User::factory()->count(12)->create();
+        // Company::factory()->count(12)->create();
+        // Job::factory()->count(12)->create();
         
-        $categorires = [
-            'Technology',
-            'Engineering',
-            'Medical',
-            'Constructive',
-            'Software',
-            'Accounting / Finance',
-            'Automative Jobs',
-            'Construction / Facilities',
-            'Telecommunications',
-            'Healthcare',
-            'Design, Art & Multimedia',
-            'Transportation & Logistics',
-            'Restaurant / Food Service',
-        ];
-        foreach($categorires as $category){
-            Category::create(['name'=>$category]);
-        }
+        // $categorires = [
+        //     'Technology',
+        //     'Engineering',
+        //     'Medical',
+        //     'Constructive',
+        //     'Software',
+        //     'Accounting / Finance',
+        //     'Automative Jobs',
+        //     'Construction / Facilities',
+        //     'Telecommunications',
+        //     'Healthcare',
+        //     'Design, Art & Multimedia',
+        //     'Transportation & Logistics',
+        //     'Restaurant / Food Service',
+        // ];
+        // foreach($categorires as $category){
+        //     Category::create(['name'=>$category]);
+        // }
 
         Role::truncate();
         $adminRole = Role::create(['name'=>'admin']);
 
         $admin = User::create([
             'name'=>'admin',
-            'email'=>'admin@gmail.com',
-            'user_type'=>'seeker',
+            'email'=>'admin2@gmail.com',
+            'user_type'=>'admin',
             'password'=>bcrypt('password123'),
             'email_verified_at'=>NOW()
         ]);
