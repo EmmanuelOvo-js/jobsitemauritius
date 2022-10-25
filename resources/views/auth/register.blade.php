@@ -58,7 +58,7 @@
                                             <div class="col-md-12">Date of Birth</div>
     
                                             <div class="col-md-12">
-                                                <input id="datepicker" type="text" class="form-control @error('dob') is-invalid 
+                                                <input type="date" class="form-control @error('dob') is-invalid 
                                                 @enderror" name="dob" value="{{ old('dob') }}" required autocomplete="dob">
     
                                                 @error('dob')

@@ -43,18 +43,18 @@ class DatabaseSeeder extends Seeder
 //             Category::create(['name'=>$category]);
 //         }
 
-        Role::truncate();
-        $adminRole = Role::create(['name'=>'admin']);
+        // Role::truncate();
+//         $adminRole = Role::create(['name'=>'admin']);
 
-        $admin = User::create([
-            'name'=>'admin',
-            'email'=>'admin@gmail.com',
-            'user_type'=>'admin',
-            'password'=>bcrypt('password123'),
-            'email_verified_at'=>NOW()
-        ]);
+//         $admin = User::create([
+//             'name'=>'admin',
+//             'email'=>'admin2@gmail.com',
+//             'user_type'=>'admin',
+//             'password'=>bcrypt('password123'),
+//             'email_verified_at'=>NOW()
+//         ]);
 
-        $admin->roles()->attach($adminRole);
+//         $admin->roles()->attach($adminRole);
 
      }
 }
