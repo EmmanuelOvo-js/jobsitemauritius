@@ -62,10 +62,24 @@ class JobController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(JobPostRequest $request)
+    public function store(Request $request)
     {
+
+        $this->validate($request,[
+            'title' => 'required|min:10',
+            'description' => 'required',
+            'roles' => 'required',
+            'address' => 'required',
+            'position' => 'required',
+            'last_date' => 'required',
+            'number_of_vacancy'=>'required|numeric',
+            'experience'=>'required|numeric'
+        ]);
        
-        // i am using another way to validate (laravel validation) this form. php artisan make:request JobPostRequest
+        /* i am using another way to validate (laravel validation) 
+        this form. php artisan make:request JobPostRequest
+        - i have removed it
+        */
 
         $user_id = auth()->user()->id;
         //the user id in the Create job table must be the same with the current logged in user (so that user can update info)

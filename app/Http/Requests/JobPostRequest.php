@@ -24,16 +24,16 @@ class JobPostRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'title' => 'required|min:10',
-            'description' => 'required',
-            'roles' => 'required',
-            'address' => 'required',
-            'position' => 'required',
-            'last_date' => 'required',
-            'number_of_vacancy'=>'required|numeric',
-            'experience'=>'required|numeric'
+        // return [
+        //     'title' => 'required|min:10',
+        //     'description' => 'required',
+        //     'roles' => 'required',
+        //     'address' => 'required',
+        //     'position' => 'required',
+        //     'last_date' => 'required',
+        //     'number_of_vacancy'=>'required|numeric',
+        //     'experience'=>'required|numeric'
 
-        ];
+        // ];
     }
 }
