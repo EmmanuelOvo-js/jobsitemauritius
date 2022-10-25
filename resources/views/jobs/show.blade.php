@@ -79,10 +79,10 @@
                 </div>
                 <div class="desBody">
                     <i class="fa fa-book iconcolor"> Description</i>
-                    <p>{{$job->description}}</p>
+                    <p style="word-break: break-all;">{{$job->description}}</p>
 
                     <i class="fa fa-user iconcolor"> Roles and Responsibilities</i>
-                    <p>{{$job->roles}}</p>
+                    <p style="word-break: break-all;">{{$job->roles}}</p>
 
                     <i class="fa fa-users iconcolor"> Number of vacancy</i>
                     <p>{{$job->number_of_vacancy}}</p>
