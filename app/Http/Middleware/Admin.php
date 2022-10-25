@@ -20,10 +20,26 @@ class Admin
     public function handle(Request $request, Closure $next)
     {
     
-        $adminRole = Auth::user()->roles->pluck('name');
-        if($adminRole->contains('admin')){
-        return $next($request);
+        // $adminRole = Auth::user()->roles->pluck('name');
+        // if($adminRole->contains('admin')){
+        //     return $next($request);
+        // }
+
+        if (Auth::check() && Auth::user()->user_type == 'admin') {
+            return $next($request);
+        } else {
+            return redirect('login');
         }
+
+        // if(!auth()->check() || !auth()->user()->roles->pluck('name','admin')){
+        //     return $next($request);
+        // }
+        
+        // return redirect('/');
+
+        // if(!auth()->check() || !auth()->user()->user_type == 'admin'){
+        //     return redirect('/');
+        // }
     }
 
 }

@@ -14,7 +14,7 @@ use App\Models\Testimonial;
 
 class JobController extends Controller
 {
-    //Jordan added middleware fro employer
+    //Jordan added middleware for employer
     // use the 'except' to grant other users access to a route
     public function __construct()
     {
@@ -40,7 +40,7 @@ class JobController extends Controller
                 ->get();
 
         $categories = Category::with('jobs')->take(12)->get();
-        $posts = Post::where('status',1)->get(); //getting the posts that the status is 1. 1==live, 2==draft.
+        $posts = Post::where('status',1)->get(); //getting the only live posts. 1==live, 2==draft.
         $testimonial = Testimonial::orderBy('id','DESC')->first(); //Show 1 testimonail on main homepage
         $companies = Company::get()->random(6);
         return view('welcome', compact('jobs', 'companies','categories','posts','testimonial'));

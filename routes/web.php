@@ -28,7 +28,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //-------------------------------------------------------------------------
 
 //Job Index route
-Route::resource('/', 'App\Http\Controllers\JobController');
+Route::get('/', 'App\Http\Controllers\JobController@index');
 // Route::get('/', 'App\Http\Controllers\JobController@index');
 
 //job show route
