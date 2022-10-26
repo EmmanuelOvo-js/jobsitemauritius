@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\CompanyController;
+use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,7 +29,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //-------------------------------------------------------------------------
 
 //Job Index route
-Route::resource('/', 'App\Http\Controllers\JobController');
+Route::get('/', 'App\Http\Controllers\JobController@index');
 // Route::get('/', 'App\Http\Controllers\JobController@index');
 
 //job show route
@@ -115,6 +116,9 @@ Route::get('/dashboard/{id}/toggle','App\Http\Controllers\DashboardController@to
 
 //blog show page
 Route::get('/posts/{id}/{slug}','App\Http\Controllers\DashboardController@show')->name('post.show');
+
+//blog list
+Route::get('/news', [App\Http\Controllers\DashboardController::class, 'bloglist'])->name('blog');
 
 //jOb listing for admin
 Route::get('/dashboard/jobs','App\Http\Controllers\DashboardController@getAllJobs')->middleware('admin');

@@ -30,7 +30,7 @@
                       <li><a href="{{route('company')}}">Companies</a></li>
                       <li><a href="{{route('alljobs')}}">Job Search</a></li>
                       <li><a href="{{__('/about')}}">About Us</a></li>
-                      <li><a href="#">News</a></li>
+                      <li><a href="{{__('/news')}}">News</a></li>
                       
                       @if(!Auth::check())
 
