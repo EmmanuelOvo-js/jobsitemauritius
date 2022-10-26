@@ -117,5 +117,25 @@ class DashboardController extends Controller
         $job->save();
         return redirect()->back()->with('message','Status updated successfully');
     }
+	
+    // for listing all blog in blog.list route
+    public function bloglist(Request $request)
+    {
+
+         //front search
+         $title = $request->get('title');
+         if($title){
+            $bloglist = Post::where('title','LIKE','%'.$title.'%')
+                        ->paginate(9);
+ 
+             return view('blog.list',compact('bloglist'));
+ 
+         }
+        else{
+            $bloglist = Post::where('status',1)->paginate(9);
+			return view('blog.list', compact('bloglist'));
+        }
+
+      }
 
 }	
